@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Waky</title>
+<meta name="description" content="Book a free consultation with Waky, or send a message about your sales automation.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 48 48" width="30" height="30">
+        <path d="M6 14 L14.5 34 L24 17 L33.5 34 L42 14" fill="none" stroke="#1F3A2E" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="17" r="3.4" fill="#E7C873"/>
+      </svg>
+      <span>waky</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" data-wa-button data-wa-message="Hi Waky, I'd like to book a free consultation.">Book a free consultation</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Get in touch</div>
+      <h1>Let's automate your sales process.</h1>
+      <p>Fastest way to reach us is WhatsApp — or leave a few details below and we'll get back to you same day.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 10px;">
+    <div class="wrap contact-grid">
+
+      <div class="form-card">
+        <h3 style="font-family: var(--display); color: var(--forest); margin-bottom: 22px;">Send a message</h3>
+        <form id="contact-form">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" placeholder="Business name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone / WhatsApp</label>
+            <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210">
+          </div>
+          <div class="field">
+            <label for="message">What's taking too long today?</label>
+            <textarea id="message" name="message" placeholder="e.g. following up with leads, sending updates, tracking deals..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Book a free consultation</button>
+          <div id="form-status" class="form-status"></div>
+        </form>
+      </div>
+
+      <div class="contact-side">
+        <div class="side-card dark">
+          <h3>Prefer WhatsApp?</h3>
+          <p>Message us directly — most first replies come back within the hour on working days.</p>
+          <a class="btn btn-light" data-wa-button data-wa-message="Hi Waky, I'd like to book a free consultation.">Open WhatsApp</a>
+        </div>
+        <div class="side-card">
+          <h3>Email</h3>
+          <p>For proposals, invoices or anything that needs a paper trail.</p>
+          <a class="btn btn-ghost" href="mailto:hello@waky.in">hello@waky.in</a>
+        </div>
+        <div class="side-card">
+          <h3>Based in Kerala</h3>
+          <p style="margin-bottom:0;">Working with teams across India — consultations run over call or WhatsApp, wherever you are.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" width="26" height="26">
+        <path d="M6 14 L14.5 34 L24 17 L33.5 34 L42 14" fill="none" stroke="#1F3A2E" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="17" r="3.4" fill="#E7C873"/>
+      </svg>
+      <span>waky</span>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Talk to us</h4>
+        <a data-wa-button data-wa-message="Hi Waky, I'd like to book a free consultation.">WhatsApp</a>
+        <a href="mailto:hello@waky.in">hello@waky.in</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Waky. Built for teams who'd rather be selling.</span>
+    <span>Kerala, India</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
