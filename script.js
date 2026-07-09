@@ -1,7 +1,7 @@
 // ---- Waky shared behaviour ----
 
 // Replace with the real WhatsApp business number (country code + number, no + or spaces)
-const WHATSAPP_NUMBER = "919876543210";
+const WHATSAPP_NUMBER = "919105999888";
 
 function waLink(message){
   const text = encodeURIComponent(message || "Hi Waky, I'd like to book a free consultation.");
