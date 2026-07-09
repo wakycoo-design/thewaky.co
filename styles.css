@@ -138,23 +138,25 @@ header.site{
 /* Brand */
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
 }
 
 .brand svg{
-  width:56px;
-  height:56px;
-  flex-shrink:0;
+    width:52px;
+    height:52px;
+    flex-shrink:0;
 }
 
 .brand span{
-  font-family: var(--display);
-  font-weight:700;
-  font-size:32px;
-  color:var(--forest);
-  letter-spacing:-0.02em;
+    font-family:var(--display);
+    font-size:40px;
+    font-weight:700;
+    line-height:1;
+    color:var(--forest);
+    letter-spacing:-0.05em;
 }
 
 /* Navigation */
