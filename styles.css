@@ -118,48 +118,102 @@ p{ margin: 0 0 1em 0; color: var(--ink-soft); }
 .btn-sm{ padding: 10px 24px; font-size: 18px; }
 
 /* ---------- Nav ---------- */
+
 header.site{
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,.86);
-  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
+
 .nav{
-  display:flex; align-items:center; justify-content:space-between;
-  padding: 18px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:24px 0;
 }
+
+/* Brand */
+
 .brand{
-    display:flex;
-    align-items:center;
-    gap:14px;
+  display:flex;
+  align-items:center;
+  gap:16px;
 }
 
 .brand svg{
-    width:52px !important;
-    height:52px !important;
-    flex-shrink:0;
+  width:56px;
+  height:56px;
+  flex-shrink:0;
 }
+
 .brand span{
   font-family: var(--display);
-  font-weight: 700;
-  font-size: 26px;
-  color: var(--forest);
-  letter-spacing: -0.01em;
+  font-weight:700;
+  font-size:32px;
+  color:var(--forest);
+  letter-spacing:-0.02em;
 }
-.nav-links{
-  display:flex; align-items:center; gap: 34px;
-  font-size: 16px; font-weight: 500; color: var(--ink);
-}
-.nav-links a{ position:relative; padding: 4px 0; color: var(--ink-soft); }
-.nav-links a:hover{ color: var(--forest); }
-.nav-links a.active{ color: var(--forest); font-weight: 600; }
-.nav-links a.active::after{
-  content:""; position:absolute; left:0; right:0; bottom:-6px;
-  height: 2px; background: var(--gold); border-radius: 2px;
-}
-.nav-cta{ display:flex; align-items:center; gap:14px; }
 
-.nav-toggle{ display:none; }
+/* Navigation */
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:42px;
+  font-size:17px;
+  font-weight:600;
+  color:var(--ink);
+}
+
+.nav-links a{
+  position:relative;
+  padding:6px 0;
+  color:var(--ink-soft);
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  color:var(--forest);
+}
+
+.nav-links a.active{
+  color:var(--forest);
+  font-weight:700;
+}
+
+.nav-links a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-8px;
+  height:2px;
+  background:var(--gold);
+  border-radius:2px;
+}
+
+/* CTA */
+
+.nav-cta{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.btn-sm{
+  padding:14px 28px;
+  font-size:16px;
+  font-weight:600;
+}
+
+.nav-toggle{
+  display:none;
+}
+  
+  
 
 /* ---------- Hero ---------- */
 .hero{
