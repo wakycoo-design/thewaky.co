@@ -128,7 +128,17 @@ header.site{
   display:flex; align-items:center; justify-content:space-between;
   padding: 18px 0;
 }
-.brand{ display:flex; align-items:center; gap: 10px; }
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.brand svg{
+    width:52px !important;
+    height:52px !important;
+    flex-shrink:0;
+}
 .brand span{
   font-family: var(--display);
   font-weight: 700;
