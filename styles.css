@@ -341,17 +341,39 @@ header.site{
 /* ---------- Section basics ---------- */
 section{ padding: 92px 0; }
 .section-head{ max-width: 620px; margin-bottom: 52px; }
-.section-head h2{ font-size: clamp(28px, 3vw, 38px); }
+.section-head h2{
+    font-size: clamp(40px, 5vw, 54px);
+    line-height: 1.1;
+}
 
 /* ---------- Value cards ---------- */
 .cards-3{
-  display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 56px;
 }
 .card{
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 30px 26px;
-  transition: border-color .2s ease, transform .2s ease;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:36px 30px;
+    transition:border-color .25s ease, transform .25s ease;
+}
+}
+.card h3{
+    font-size:24px;
+    margin:20px 0 6px;
+}
+
+.card h4{
+    font-size:16px;
+    font-weight:500;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+}
+
+.card p{
+    line-height:1.8;
 }
 .card:hover{ border-color: var(--sage-deep); transform: translateY(-3px); }
 .card .icon{
