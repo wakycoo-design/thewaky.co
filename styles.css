@@ -194,20 +194,22 @@ header.site{
 
 /* CTA */
 
-.nav-cta{
-  display:flex;
-  align-items:center;
-  gap:18px;
+.cta-actions{
+    display:flex;
+    justify-content:center;
+    margin-top:28px;
 }
 
-.btn-sm{
-  padding:14px 28px;
-  font-size:16px;
-  font-weight:600;
+.text-link{
+    font-size:18px;
+    font-weight:600;
+    color:var(--forest);
+    text-decoration:none;
+    transition:.2s ease;
 }
 
-.nav-toggle{
-  display:none;
+.text-link:hover{
+    opacity:.65;
 }
   
   
