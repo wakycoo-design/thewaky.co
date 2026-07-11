@@ -391,12 +391,14 @@ section{ padding: 92px 0; }
     justify-content:center;
 }
 
-.avatar img{
+
+    .avatar img{
     width:100%;
     height:100%;
-    object-fit:contain;
+    object-fit:cover;
     display:block;
 }
+
 .card h3{ font-size: 18.5px; margin-bottom: 8px; }
 .card p{ font-size: 14.5px; margin-bottom: 0; }
 
