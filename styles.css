@@ -381,8 +381,8 @@ section{ padding: 92px 0; }
 }
 .card:hover{ border-color: var(--sage-deep); transform: translateY(-3px); }
 .avatar{
-    width:400px;
-    height:400px;
+    width:280px;
+    height:280px;
     margin:0 auto 28px;
     overflow:hidden;
     border-radius:50%;
