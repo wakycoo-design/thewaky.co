@@ -601,6 +601,9 @@ footer.site{
     width:max-content;
     animation:scrollLogos 22s linear infinite;
 }
+.logo-track .pill{
+    flex-shrink: 0;
+}
 
 @keyframes scrollLogos{
     from{
