@@ -590,3 +590,23 @@ footer.site{
 @media (prefers-reduced-motion: reduce){
   .pulse{ animation: none; }
 }
+.logo-strip{
+    overflow:hidden;
+    width:100%;
+}
+
+.logo-track{
+    display:flex;
+    gap:16px;
+    width:max-content;
+    animation:scrollLogos 22s linear infinite;
+}
+
+@keyframes scrollLogos{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
