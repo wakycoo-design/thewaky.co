@@ -224,7 +224,7 @@ header.site{
   gap:32px;
   align-items:center;
 }
-}
+
 .hero h1{
   font-size: clamp(36px, 4.6vw, 56px);
   max-width:none;
@@ -243,15 +243,23 @@ header.site{
   color: var(--ink-faint);
 }
 .hero-art{
-    width: 100%;
-    max-width: 760px;   
-    margin-left: auto;
+    max-width:none;
+    display:flex;
+    justify-content:center;
 }
 
 .hero-art img{
-    width: 100%;
-    height: auto;
-    display: block;
+    width:135%;
+    max-width:none;
+    height:auto;
+    transform:translateX(-40px);
+}
+
+.hero-art img{
+    width:135%;
+    max-width:none;
+    height:auto;
+    transform:translateX(-40px);
 }
 /* ---------- Flow diagram (signature element) ---------- */
 .flow-card{
