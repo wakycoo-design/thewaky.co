@@ -83,26 +83,44 @@ Book a free strategy session with Waky. We'll understand your current workflow, 
 
 <h2>Book your consultation</h2>
 
-<form>
+<form action="https://api.web3forms.com/submit" method="POST">
+
+<input type="hidden" name="access_key" value="e45c2f17-fec7-4e88-8450-828ea6a8664b">
+
+<input type="hidden" name="subject" value="New Lead from Waky Website">
 
 <div class="field">
-<input type="text" placeholder="Full Name *">
+<input
+type="text"
+name="name"
+placeholder="Full Name *"
+required>
 </div>
 
 <div class="field">
-<input type="text" placeholder="Company Name">
+<input
+type="text"
+name="company"
+placeholder="Company Name">
 </div>
 
 <div class="field">
-<input type="email" placeholder="Email *">
+<input
+type="email"
+name="email"
+placeholder="Email *"
+required>
 </div>
 
 <div class="field">
-<input type="tel" placeholder="Phone Number">
+<input
+type="tel"
+name="phone"
+placeholder="Phone Number">
 </div>
 
 <div class="field">
-<select>
+<select name="crm">
 <option selected disabled>Current CRM</option>
 <option>Zoho CRM</option>
 <option>HubSpot</option>
@@ -113,7 +131,10 @@ Book a free strategy session with Waky. We'll understand your current workflow, 
 </div>
 
 <div class="field">
-<textarea placeholder="Tell us what you'd like to automate..."></textarea>
+<textarea
+name="message"
+placeholder="Tell us what you'd like to automate..."
+required></textarea>
 </div>
 
 <button class="btn btn-primary" type="submit">
