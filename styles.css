@@ -252,7 +252,7 @@ header.site{
     width:120%;
     max-width:none;
     height:auto;
-    transform:translateX(-40px);
+    transform:translateX(30px);
 }
 
 .hero-art img{
