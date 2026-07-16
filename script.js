@@ -40,16 +40,17 @@ if (form) {
       const result = await response.json();
 
     if (result.success) {
-    form.innerHTML = `
-        <div style="padding:30px;text-align:center;">
-            <h2>✓ Request received!</h2>
-            <p>Thank you for contacting Waky.</p>
-            <p>We'll review your requirements and get back to you shortly.</p>
-            <a href="index.html" class="btn btn-primary">
-                Back to Home
-            </a>
-        </div>
-    `;
+    document.getElementById("contact-card").innerHTML = `
+<h2>✓ Request received!</h2>
+
+<p>Thanks for reaching out to Waky.</p>
+
+<p>We'll review your requirements and get back to you shortly.</p>
+
+<a href="index.html" class="btn btn-primary">
+Back to Home
+</a>
+`;
 }
        else {
         alert(result.message);
