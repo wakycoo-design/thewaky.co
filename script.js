@@ -30,9 +30,12 @@ if (form) {
 
     try {
       const response = await fetch(form.action, {
-        method: "POST",
-        body: data
-      });
+  method: "POST",
+  headers: {
+    Accept: "application/json"
+  },
+  body: data
+});
 
       const result = await response.json();
 
