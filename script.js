@@ -43,7 +43,24 @@ console.log(response.status);
 console.log(result);
 
 if (result.success) {
-  document.getElementById("contact-card").innerHTML = `
+  document.querySelector(".contact-left").style.display = "none";
+
+document.querySelector(".contact-layout").style.gridTemplateColumns = "1fr";
+
+document.getElementById("contact-card").style.maxWidth = "650px";
+document.getElementById("contact-card").style.margin = "0 auto";
+
+document.getElementById("contact-card").innerHTML = `
+<h2>✓ Request received!</h2>
+
+<p>Thanks for reaching out to Waky.</p>
+
+<p>We'll review your requirements and get back to you shortly.</p>
+
+<a href="index.html" class="btn btn-primary">
+Back to Home
+</a>
+`;
     <h2>✓ Request received!</h2>
 
     <p>Thanks for reaching out to Waky.</p>
