@@ -38,3 +38,32 @@ const path = window.location.pathname.split("/").pop() || "index.html";
 document.querySelectorAll(".nav-links a").forEach(a=>{
   if(a.getAttribute("href") === path) a.classList.add("active");
 });
+const form = document.getElementById("contact-form");
+
+if (form) {
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: data
+      });
+
+      if (response.ok) {
+    form.reset();
+
+    form.style.display = "none";
+
+    document.getElementById("form-result").style.display = "block";
+}
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Network error. Please try again.");
+    }
+  });
+}
