@@ -29,34 +29,34 @@ if (form) {
     const data = new FormData(form);
 
     try {
-      const response = await fetch(form.action, {
+      cconst response = await fetch(form.action, {
   method: "POST",
   headers: {
     Accept: "application/json"
   },
   body: data
 });
-      console.log(response.status);
-console.log(await response.text());
 
-      const result = await response.json();
+const result = await response.json();
 
-    if (result.success) {
-    document.getElementById("contact-card").innerHTML = `
-<h2>✓ Request received!</h2>
+console.log(response.status);
+console.log(result);
 
-<p>Thanks for reaching out to Waky.</p>
+if (result.success) {
+  document.getElementById("contact-card").innerHTML = `
+    <h2>✓ Request received!</h2>
 
-<p>We'll review your requirements and get back to you shortly.</p>
+    <p>Thanks for reaching out to Waky.</p>
 
-<a href="index.html" class="btn btn-primary">
-Back to Home
-</a>
-`;
+    <p>We'll review your requirements and get back to you shortly.</p>
+
+    <a href="index.html" class="btn btn-primary">
+      Back to Home
+    </a>
+  `;
+} else {
+  alert(result.message);
 }
-       else {
-        alert(result.message);
-      }
 
     } catch (error) {
       alert("Network error. Please try again.");
