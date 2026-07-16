@@ -36,6 +36,8 @@ if (form) {
   },
   body: data
 });
+      console.log(response.status);
+console.log(await response.text());
 
       const result = await response.json();
 
