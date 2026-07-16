@@ -34,16 +34,16 @@ if (form) {
         body: data
       });
 
-      if (response.ok) {
-    form.reset();
+      const result = await response.json();
 
-    form.style.display = "none";
-
-    document.getElementById("form-result").style.display = "block";
-}
+      if (result.success) {
+        form.reset();
+        form.style.display = "none";
+        document.getElementById("form-result").style.display = "block";
       } else {
-        alert("Something went wrong. Please try again.");
+        alert(result.message);
       }
+
     } catch (error) {
       alert("Network error. Please try again.");
     }
