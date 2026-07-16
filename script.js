@@ -48,7 +48,7 @@ if (form) {
         </div>
     `;
 }
-      } else {
+       else {
         alert(result.message);
       }
 
