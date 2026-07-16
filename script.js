@@ -61,16 +61,7 @@ document.getElementById("contact-card").innerHTML = `
 Back to Home
 </a>
 `;
-    <h2>✓ Request received!</h2>
-
-    <p>Thanks for reaching out to Waky.</p>
-
-    <p>We'll review your requirements and get back to you shortly.</p>
-
-    <a href="index.html" class="btn btn-primary">
-      Back to Home
-    </a>
-  `;
+    
 } else {
   alert(result.message);
 }
