@@ -14,24 +14,6 @@ document.querySelectorAll("[data-wa-button]").forEach(el=>{
   el.setAttribute("rel", "noopener");
 });
 
-// Contact form: no backend wired up yet, so we confirm + open WhatsApp with the details prefilled.
-const contactForm = document.getElementById("contact-form");
-if(contactForm){
-  contactForm.addEventListener("submit", function(e){
-    e.preventDefault();
-    const data = new FormData(contactForm);
-    const name = data.get("name") || "";
-    const company = data.get("company") || "";
-    const message = data.get("message") || "";
-    const summary = `Hi Waky, I'm ${name}${company ? " from " + company : ""}. ${message}`;
-    const status = document.getElementById("form-status");
-    if(status){
-      status.textContent = "Thanks — opening WhatsApp so we can pick this up right away.";
-      status.classList.add("show");
-    }
-    window.open(waLink(summary), "_blank", "noopener");
-  });
-}
 
 // Mark current nav link active
 const path = window.location.pathname.split("/").pop() || "index.html";
