@@ -29,7 +29,7 @@ if (form) {
     const data = new FormData(form);
 
     try {
-      cconst response = await fetch(form.action, {
+      const response = await fetch(form.action, {
   method: "POST",
   headers: {
     Accept: "application/json"
