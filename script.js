@@ -49,7 +49,7 @@ document.querySelector(".contact-layout").style.gridTemplateColumns = "1fr";
 
 document.getElementById("contact-card").style.maxWidth = "650px";
 document.getElementById("contact-card").style.margin = "0 auto";
-
+document.querySelector("footer.site").style.display = "none";
 document.getElementById("contact-card").innerHTML = `
 <h2>✓ Request received!</h2>
 
