@@ -38,7 +38,7 @@ if (form) {
 
       if (result.success) {
         form.reset();
-        form.style.display = "none";
+    
         document.getElementById("form-result").style.display = "block";
       } else {
         alert(result.message);
