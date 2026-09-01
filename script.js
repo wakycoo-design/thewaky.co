@@ -92,5 +92,41 @@ if (form) {
 
   });
 }
+document.getElementById("testOtpBtn").addEventListener("click", async function () {
 
+    console.log("🚀 BUTTON CLICKED");
+
+    const phone = "+919753999888";
+
+    try {
+        console.log("📡 CALLING ZOHO API...");
+
+        
+
+        const response = await fetch(
+            "https://www.zohoapis.in/creator/custom/mindlappvtltd/Send_OTP?publickey=xRTH2rD0N9uCxyZSeYp3Fe53p",
+            {
+                method: "POST",
+                body: JSON.stringify({
+                    Phone: "+919753999888"
+                })
+            }
+        );
+
+        console.log("📥 RESPONSE STATUS:", response.status);
+
+        const result = await response.text();
+
+        console.log("📦 ZOHO RESPONSE:", result);
+
+        alert("SUCCESS! Response received. Check Console.");
+
+    } catch (error) {
+
+        console.error("❌ FETCH ERROR:", error);
+
+        alert("API FAILED! Check Console.");
+    }
+
+});
 
