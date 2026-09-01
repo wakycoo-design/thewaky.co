@@ -457,10 +457,10 @@ section{ padding: 92px 0; }
 .cta-banner p{ max-width: 480px; margin: 0 auto 28px; }
 .cta-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 
-/* ------------- Trusted By / Logo Marquee ------------- */
+/* ========== TRUSTED / LOGO MARQUEE ========== */
 
 .trusted-section{
-  padding: 70px 0;
+  padding: 80px 0 70px;
   overflow: hidden;
 }
 
@@ -469,59 +469,123 @@ section{ padding: 92px 0; }
   align-items: center;
   justify-content: center;
   gap: 10px;
+  text-align: center;
   font-family: var(--mono);
   font-size: 12px;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
   color: var(--ink-faint);
-  margin-bottom: 36px;
+  margin-bottom: 42px;
 }
 
 .trusted-label::before{
   content: "";
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   background: var(--gold);
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
+/* Marquee viewport */
 .logo-marquee{
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
 }
 
+/* Moving row */
 .logo-track{
   display: flex;
   align-items: center;
-  gap: 70px;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 28s linear infinite;
 }
 
-.client-logo {
-    flex-shrink: 0;
-    width: 180px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Each logo slot */
+.client-logo{
+  flex: 0 0 240px;
+  height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 35px;
 }
 
-.client-logo img {
-    height: 45px;
-    width: auto;
-    max-width: 160px;
-    object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.65;
+/* Actual logo image */
+.client-logo img{
+  display: block;
+  max-width: 170px;
+  max-height: 55px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  filter: grayscale(100%);
+  opacity: 0.65;
+
+  transition: 
+    opacity 0.3s ease,
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
 
+.client-logo img:hover{
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Fallback text logos */
+.client-logo{
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--forest);
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+/* Infinite movement */
 @keyframes marquee{
   from{
     transform: translateX(0);
   }
+
   to{
     transform: translateX(-50%);
   }
+}
+
+
+/* Mobile */
+@media (max-width: 768px){
+
+  .trusted-section{
+    padding: 60px 0;
+  }
+
+  .trusted-label{
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+  }
+
+  .client-logo{
+    flex-basis: 180px;
+    height: 70px;
+    padding: 0 25px;
+  }
+
+  .client-logo img{
+    max-width: 130px;
+    max-height: 45px;
+  }
+
 }
 
 /* ---------- Footer ---------- */
