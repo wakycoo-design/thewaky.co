@@ -98,52 +98,19 @@ if (form) {
 // TEMP TEST — ZOHO CREATOR OTP API
 // ============================================
 
-async function testZohoOTP() {
-
-  const phone = "+919753999888";
-
-  console.log("🚀 Starting Zoho OTP API test...");
-  console.log("📱 Phone:", phone);
-
-  try {
-
-    const response = await fetch(
-      "https://www.zohoapis.in/creator/custom/mindlappvtltd/Send_OTP?publickey=xRTH2rD0N9uCxyZSeYp3Fe53p",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          Phone: phone
-        })
-      }
-    );
-
-    console.log("📡 Response received!");
-    console.log("Status:", response.status);
-
-    const result = await response.text();
-
-    console.log("📦 Zoho Response:", result);
-
-    if (response.ok) {
-      alert("SUCCESS! Check Console for Zoho response.");
-    } else {
-      alert("API FAILED! Status: " + response.status);
-    }
-
-  } catch (error) {
-
-    console.error("❌ ZOHO FETCH FAILED:", error);
-
-    alert(
-      "FETCH FAILED!\n\n" +
-      "Open DevTools → Console.\n" +
-      "Check if this is a CORS error."
-    );
-
-  }
-
-}
 console.log("🔥 JS FILE LOADED");
+
+const testButton = document.getElementById("test-zoho-otp");
+
+console.log("BUTTON:", testButton);
+
+if (testButton) {
+    console.log("✅ BUTTON FOUND");
+
+    testButton.addEventListener("click", function () {
+        console.log("🔥🔥 BUTTON ACTUALLY CLICKED");
+        alert("BUTTON CLICK WORKS!");
+    });
+} else {
+    console.error("❌ BUTTON NOT FOUND - CHECK ID");
+}
