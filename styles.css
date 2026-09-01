@@ -456,6 +456,56 @@ section{ padding: 92px 0; }
 .cta-banner h2{ margin-bottom: 12px; }
 .cta-banner p{ max-width: 480px; margin: 0 auto 28px; }
 .cta-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+/* Trusted businesses */
+
+.trusted-section{
+  padding: 70px 0;
+  overflow: hidden;
+}
+
+.trusted-label{
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 32px;
+}
+
+.logo-marquee{
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-track{
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.client-logo{
+  flex-shrink: 0;
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--forest);
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
+@keyframes marquee{
+  from{
+    transform: translateX(0);
+  }
+
+  to{
+    transform: translateX(-50%);
+  }
+}
 
 /* ---------- Footer ---------- */
 footer.site{
