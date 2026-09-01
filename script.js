@@ -114,3 +114,10 @@ if (testButton) {
 } else {
     console.error("❌ BUTTON NOT FOUND");
 }
+function testZohoOTP() {
+
+    console.log("🚀 BUTTON CLICKED - FUNCTION WORKS");
+
+    alert("Button click detected!");
+
+}
