@@ -97,20 +97,20 @@ if (form) {
 // ============================================
 // TEMP TEST — ZOHO CREATOR OTP API
 // ============================================
-
 console.log("🔥 JS FILE LOADED");
 
 const testButton = document.getElementById("test-zoho-otp");
 
-console.log("BUTTON:", testButton);
+console.log("BUTTON ELEMENT:", testButton);
 
 if (testButton) {
     console.log("✅ BUTTON FOUND");
 
     testButton.addEventListener("click", function () {
-        console.log("🔥🔥 BUTTON ACTUALLY CLICKED");
+        console.log("🔥 BUTTON CLICKED");
         alert("BUTTON CLICK WORKS!");
     });
+
 } else {
-    console.error("❌ BUTTON NOT FOUND - CHECK ID");
+    console.error("❌ BUTTON NOT FOUND");
 }
