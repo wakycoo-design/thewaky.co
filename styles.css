@@ -456,7 +456,8 @@ section{ padding: 92px 0; }
 .cta-banner h2{ margin-bottom: 12px; }
 .cta-banner p{ max-width: 480px; margin: 0 auto 28px; }
 .cta-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-/* Trusted businesses */
+
+/* ------------- Trusted By / Logo Marquee ------------- */
 
 .trusted-section{
   padding: 70px 0;
@@ -464,18 +465,28 @@ section{ padding: 92px 0; }
 }
 
 .trusted-label{
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   font-family: var(--mono);
   font-size: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  letter-spacing: 4px;
   color: var(--ink-faint);
-  margin-bottom: 32px;
+  margin-bottom: 36px;
+}
+
+.trusted-label::before{
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
 }
 
 .logo-marquee{
-  width: 100%;
   overflow: hidden;
+  width: 100%;
 }
 
 .logo-track{
@@ -487,21 +498,25 @@ section{ padding: 92px 0; }
 }
 
 .client-logo{
-  flex-shrink: 0;
-  font-family: var(--display);
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--forest);
-  opacity: 0.55;
-  white-space: nowrap;
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+
+  filter: grayscale(100%);
+  opacity: 0.65;
+
+  transition: opacity .3s ease, filter .3s ease;
+}
+
+.client-logo:hover{
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 @keyframes marquee{
   from{
     transform: translateX(0);
   }
-
   to{
     transform: translateX(-50%);
   }
