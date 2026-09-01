@@ -497,20 +497,22 @@ section{ padding: 92px 0; }
   animation: marquee 35s linear infinite;
 }
 
-.client-logo{
-  height: 55px;
-  width: auto;
-  object-fit: contain;
-
-  filter: grayscale(100%);
-  opacity: 0.65;
-
-  transition: opacity .3s ease, filter .3s ease;
+.client-logo {
+    flex-shrink: 0;
+    width: 180px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.client-logo:hover{
-  filter: grayscale(0%);
-  opacity: 1;
+.client-logo img {
+    height: 45px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.65;
 }
 
 @keyframes marquee{
