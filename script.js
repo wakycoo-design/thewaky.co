@@ -146,3 +146,4 @@ async function testZohoOTP() {
   }
 
 }
+console.log("🔥 JS FILE LOADED");
