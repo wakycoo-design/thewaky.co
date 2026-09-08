@@ -588,6 +588,393 @@ section{ padding: 92px 0; }
 
 }
 
+/* =========================================
+   SERVICES SHOWCASE
+========================================= */
+
+.services-showcase {
+  padding: 140px 0;
+  background: #f6f3ec;
+}
+
+.services-intro {
+  max-width: 700px;
+  margin-bottom: 80px;
+}
+
+.services-intro h2 {
+  margin: 18px 0 20px;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.services-intro p {
+  max-width: 520px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+
+/* SERVICE LIST */
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+/* MAIN CARD */
+
+.service-item {
+  position: relative;
+  min-height: 420px;
+
+  display: grid;
+  grid-template-columns: 90px 1fr 42%;
+
+  overflow: hidden;
+  padding: 48px;
+
+  text-decoration: none;
+  color: #171717;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+
+/* COLOURS */
+
+.service-green {
+  background: #b9cfb5;
+}
+
+.service-purple {
+  background: #c7b6d3;
+}
+
+.service-yellow {
+  background: #e6cd7b;
+}
+
+
+/* NUMBER */
+
+.service-number {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+
+/* CONTENT */
+
+.service-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 520px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-content h3 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.4rem, 4vw, 5rem);
+
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.service-content p {
+  max-width: 400px;
+
+  margin: 28px 0;
+
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.service-link {
+  margin-top: auto;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+
+  border-bottom: 1px solid #171717;
+  padding-bottom: 6px;
+}
+
+.service-link span {
+  margin-left: 8px;
+  font-size: 1.1rem;
+}
+
+
+/* =========================================
+   ABSTRACT ART BASE
+========================================= */
+
+.service-art {
+  position: relative;
+  min-height: 320px;
+}
+
+
+/* =========================================
+   SERVICE 01 — SYSTEM DESIGN
+========================================= */
+
+.art-system {
+  position: relative;
+}
+
+.system-circle {
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  border: 4px solid #171717;
+  border-radius: 50%;
+
+  right: 40px;
+  top: 20px;
+}
+
+.system-line {
+  position: absolute;
+
+  height: 4px;
+  background: #171717;
+
+  transform-origin: left center;
+}
+
+.line-one {
+  width: 220px;
+
+  top: 110px;
+  left: 20px;
+
+  transform: rotate(-25deg);
+}
+
+.line-two {
+  width: 180px;
+
+  bottom: 70px;
+  left: 80px;
+
+  transform: rotate(35deg);
+}
+
+.system-block {
+  position: absolute;
+
+  width: 42px;
+  height: 42px;
+
+  background: #171717;
+}
+
+.block-one {
+  top: 70px;
+  left: 50px;
+}
+
+.block-two {
+  bottom: 45px;
+  right: 30px;
+}
+
+
+/* =========================================
+   SERVICE 02 — IMPLEMENTATION
+========================================= */
+
+.impl-square {
+  position: absolute;
+
+  border: 4px solid #171717;
+
+  transform: rotate(12deg);
+}
+
+.square-one {
+  width: 190px;
+  height: 190px;
+
+  right: 70px;
+  top: 30px;
+}
+
+.square-two {
+  width: 120px;
+  height: 120px;
+
+  left: 50px;
+  bottom: 30px;
+
+  background: #171717;
+}
+
+.square-three {
+  width: 70px;
+  height: 70px;
+
+  right: 30px;
+  bottom: 40px;
+}
+
+
+/* =========================================
+   SERVICE 03 — AI & AUTOMATION
+========================================= */
+
+.auto-orbit {
+  position: absolute;
+
+  width: 280px;
+  height: 180px;
+
+  border: 4px solid #171717;
+
+  border-radius: 50%;
+
+  right: 30px;
+  top: 55px;
+
+  transform: rotate(-20deg);
+}
+
+.auto-dot {
+  position: absolute;
+
+  width: 28px;
+  height: 28px;
+
+  background: #171717;
+
+  border-radius: 50%;
+}
+
+.dot-one {
+  top: 50px;
+  left: 50px;
+}
+
+.dot-two {
+  bottom: 55px;
+  left: 160px;
+}
+
+.dot-three {
+  top: 150px;
+  right: 80px;
+}
+
+.auto-arrow {
+  position: absolute;
+
+  font-size: 7rem;
+
+  right: 120px;
+  top: 80px;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .services-showcase {
+    padding: 90px 0;
+  }
+
+  .services-intro {
+    margin-bottom: 50px;
+  }
+
+  .service-item {
+
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    padding: 32px 26px;
+
+    gap: 30px;
+  }
+
+  .service-number {
+    margin-bottom: 10px;
+  }
+
+  .service-content h3 {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+
+  .service-content p {
+    margin: 20px 0 30px;
+  }
+
+  .service-link {
+    margin-top: 0;
+  }
+
+  .service-art {
+    min-height: 220px;
+    margin-top: 10px;
+  }
+
+  .system-circle {
+    width: 170px;
+    height: 170px;
+
+    right: 10px;
+  }
+
+  .line-one {
+    width: 160px;
+  }
+
+  .line-two {
+    width: 130px;
+  }
+
+  .impl-square.square-one {
+    width: 150px;
+    height: 150px;
+  }
+
+  .auto-orbit {
+    width: 220px;
+    height: 140px;
+  }
+
+  .auto-arrow {
+    font-size: 5rem;
+    right: 70px;
+  }
+
+}
+
 /* ---------- Footer ---------- */
 footer.site{
   border-top: 1px solid var(--line);
