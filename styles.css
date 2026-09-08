@@ -588,81 +588,72 @@ section{ padding: 92px 0; }
 
 }
 
-
-
-
-/* =========================================
-   WAKY SERVICES SHOWCASE
-========================================= */
+/* =====================================================
+   WAKY SERVICES — FINAL DESKTOP OVERRIDE
+===================================================== */
 
 .services-showcase {
   background: #f6f3ec;
-  padding: 68px 0 90px;
+  padding: 70px 0 100px;
 }
 
 
-/* =========================================
-   INTRO
-========================================= */
+/* ---------- INTRO ---------- */
 
 .services-intro {
-  max-width: 900px;
-  margin-bottom: 38px;
+  max-width: 850px;
+  margin: 0 auto 42px 0;
 }
 
 .services-intro .eyebrow {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .services-intro h2 {
   margin: 0;
-
-  max-width: 850px;
+  max-width: 780px;
 
   font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(3rem, 5.2vw, 5.8rem);
-
+  font-size: clamp(3rem, 4.8vw, 5.4rem);
   line-height: 0.94;
-
   letter-spacing: -0.065em;
 
   color: #1f3a2e;
 }
 
 
-/* =========================================
-   SERVICE LIST
-========================================= */
+/* ---------- SERVICE GRID ---------- */
 
 .services-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
 
-  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  width: 100%;
 }
 
 
-/* =========================================
-   SERVICE CARD
-========================================= */
+/* ---------- SERVICE CARDS ---------- */
 
 .service-item {
   position: relative;
 
   display: grid;
 
-  grid-template-columns: 60px minmax(0, 1fr) 38%;
+  grid-template-columns: 45px 1fr;
 
-  min-height: 225px;
+  min-height: 310px;
 
-  padding: 30px 42px;
+  padding: 30px 34px;
 
   overflow: hidden;
 
+  color: #1f3a2e;
   text-decoration: none;
 
-  color: #1f3a2e;
+  isolation: isolate;
 
   transition:
     transform 0.3s ease,
@@ -670,13 +661,11 @@ section{ padding: 92px 0; }
 }
 
 .service-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 
-/* =========================================
-   PASTEL PALETTE
-========================================= */
+/* ---------- COLOURS ---------- */
 
 .service-green {
   background: #b9cdb8;
@@ -691,41 +680,32 @@ section{ padding: 92px 0; }
 }
 
 
-/* =========================================
-   NUMBER
-========================================= */
+/* ---------- NUMBER ---------- */
 
 .service-number {
   position: relative;
+  z-index: 5;
 
-  z-index: 3;
-
-  padding-top: 5px;
+  padding-top: 4px;
 
   font-family: "JetBrains Mono", monospace;
-
   font-size: 0.7rem;
 
   opacity: 0.65;
 }
 
 
-/* =========================================
-   CONTENT
-========================================= */
+/* ---------- CONTENT ---------- */
 
 .service-content {
   position: relative;
-
-  z-index: 3;
+  z-index: 5;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-start;
 
-  max-width: 570px;
+  max-width: 430px;
 }
 
 .service-content h3 {
@@ -733,24 +713,22 @@ section{ padding: 92px 0; }
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(2.1rem, 3.3vw, 4rem);
+  font-size: clamp(2.2rem, 3.1vw, 3.5rem);
 
   line-height: 0.94;
-
   letter-spacing: -0.055em;
 
   color: #1f3a2e;
 }
 
 .service-content p {
-  max-width: 430px;
+  max-width: 350px;
 
-  margin: 15px 0 16px;
+  margin: 18px 0;
 
   font-family: "Inter", sans-serif;
 
   font-size: 0.82rem;
-
   line-height: 1.5;
 
   color: #40564d;
@@ -764,35 +742,46 @@ section{ padding: 92px 0; }
   border-bottom: 1px solid currentColor;
 
   font-family: "JetBrains Mono", monospace;
-
   font-size: 0.66rem;
 
   color: #1f3a2e;
 }
 
-.service-link span {
-  margin-left: 7px;
 
-  font-size: 0.85rem;
+/* =====================================================
+   THIRD CARD
+   Full width underneath the first two
+===================================================== */
+
+.service-item:nth-child(3) {
+  grid-column: 1 / -1;
+
+  min-height: 260px;
+
+  grid-template-columns: 45px minmax(0, 1fr) 42%;
 }
 
 
-/* =========================================
-   ABSTRACT ART
-========================================= */
+/* ---------- THIRD CARD ART ---------- */
+
+.service-item:nth-child(3) .service-art {
+  min-height: 190px;
+}
+
+
+/* =====================================================
+   ART
+===================================================== */
 
 .service-art {
   position: relative;
+  min-height: 220px;
 
-  min-height: 160px;
-
-  z-index: 1;
+  z-index: 2;
 }
 
 
-/* =========================================
-   01 — BUSINESS SYSTEM DESIGN
-========================================= */
+/* ---------- SYSTEM DESIGN ---------- */
 
 .system-circle {
   position: absolute;
@@ -800,11 +789,10 @@ section{ padding: 92px 0; }
   width: 150px;
   height: 150px;
 
-  right: 35px;
-  top: 2px;
+  right: 25px;
+  top: 5px;
 
   border: 3px solid #171717;
-
   border-radius: 50%;
 }
 
@@ -819,16 +807,16 @@ section{ padding: 92px 0; }
 }
 
 .line-one {
-  width: 145px;
+  width: 140px;
 
-  top: 48px;
+  top: 45px;
   left: 5px;
 
   transform: rotate(-25deg);
 }
 
 .line-two {
-  width: 120px;
+  width: 115px;
 
   bottom: 25px;
   left: 45px;
@@ -846,19 +834,17 @@ section{ padding: 92px 0; }
 }
 
 .block-one {
-  top: 42px;
+  top: 40px;
   left: 25px;
 }
 
 .block-two {
-  right: 20px;
-  bottom: 17px;
+  right: 15px;
+  bottom: 18px;
 }
 
 
-/* =========================================
-   02 — SOFTWARE IMPLEMENTATION
-========================================= */
+/* ---------- SOFTWARE IMPLEMENTATION ---------- */
 
 .impl-square {
   position: absolute;
@@ -869,44 +855,42 @@ section{ padding: 92px 0; }
 }
 
 .square-one {
-  width: 130px;
-  height: 130px;
+  width: 125px;
+  height: 125px;
 
-  right: 65px;
-  top: 2px;
+  right: 55px;
+  top: 5px;
 }
 
 .square-two {
-  width: 78px;
-  height: 78px;
+  width: 75px;
+  height: 75px;
 
   left: 35px;
-  bottom: 7px;
+  bottom: 5px;
 
   background: #171717;
 }
 
 .square-three {
-  width: 47px;
-  height: 47px;
+  width: 45px;
+  height: 45px;
 
-  right: 25px;
-  bottom: 12px;
+  right: 15px;
+  bottom: 10px;
 }
 
 
-/* =========================================
-   03 — AI & AUTOMATION
-========================================= */
+/* ---------- AI AUTOMATION ---------- */
 
 .auto-orbit {
   position: absolute;
 
-  width: 195px;
-  height: 120px;
+  width: 190px;
+  height: 115px;
 
-  right: 25px;
-  top: 22px;
+  right: 35px;
+  top: 30px;
 
   border: 3px solid #171717;
 
@@ -928,76 +912,69 @@ section{ padding: 92px 0; }
 
 .dot-one {
   top: 28px;
-  left: 35px;
+  left: 30px;
 }
 
 .dot-two {
-  bottom: 24px;
+  bottom: 20px;
   left: 105px;
 }
 
 .dot-three {
-  top: 92px;
+  top: 90px;
   right: 55px;
 }
 
 .auto-arrow {
   position: absolute;
 
-  right: 82px;
-  top: 34px;
+  right: 90px;
+  top: 35px;
 
-  font-size: 4.3rem;
-
+  font-size: 4rem;
   line-height: 1;
 
   color: #171717;
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
 @media (max-width: 768px) {
 
   .services-showcase {
-    padding: 58px 0 70px;
+    padding: 55px 0 70px;
   }
-
 
   .services-intro {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
-
-
-  .services-intro .eyebrow {
-    margin-bottom: 15px;
-  }
-
 
   .services-intro h2 {
-    font-size: clamp(2.8rem, 11vw, 4.2rem);
-
-    line-height: 0.94;
+    font-size: clamp(2.7rem, 11vw, 4rem);
   }
 
-
   .services-list {
+    display: flex;
+    flex-direction: column;
+
     gap: 12px;
   }
 
+  .service-item,
+  .service-item:nth-child(3) {
+    display: grid;
 
-  .service-item {
     grid-template-columns: 1fr;
 
-    min-height: 430px;
+    min-height: 390px;
 
     padding: 28px 25px;
 
     gap: 10px;
   }
-
 
   .service-number {
     position: absolute;
@@ -1006,13 +983,11 @@ section{ padding: 92px 0; }
     right: 24px;
   }
 
-
   .service-content {
+    padding-top: 12px;
+
     max-width: 100%;
-
-    padding-top: 15px;
   }
-
 
   .service-content h3 {
     max-width: 90%;
@@ -1020,74 +995,48 @@ section{ padding: 92px 0; }
     font-size: clamp(2.3rem, 10vw, 3.4rem);
   }
 
-
   .service-content p {
     max-width: 340px;
 
-    margin: 16px 0 20px;
-
-    font-size: 0.84rem;
+    margin: 15px 0 20px;
   }
-
 
   .service-link {
     margin-top: 0;
   }
 
+  .service-art,
+  .service-item:nth-child(3) .service-art {
+    min-height: 145px;
 
-  .service-art {
-    min-height: 160px;
-
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
-
   .system-circle {
-    width: 130px;
-    height: 130px;
+    width: 125px;
+    height: 125px;
 
     right: 8px;
   }
 
-
-  .line-one {
-    width: 115px;
-  }
-
-
-  .line-two {
-    width: 95px;
-  }
-
-
   .impl-square.square-one {
-    width: 115px;
-    height: 115px;
+    width: 110px;
+    height: 110px;
   }
-
 
   .auto-orbit {
-    width: 165px;
-    height: 105px;
+    width: 160px;
+    height: 100px;
   }
-
 
   .auto-arrow {
-    right: 58px;
-
-    font-size: 3.5rem;
+    right: 55px;
+    font-size: 3.4rem;
   }
-
 }
 
 
 
-
-
-
-
-
-   
 
 /* ---------- Footer ---------- */
 footer.site{
