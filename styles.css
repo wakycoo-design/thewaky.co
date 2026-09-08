@@ -587,60 +587,851 @@ section{ padding: 92px 0; }
   }
 
 }
-/* =========================================
-   WAKY SERVICES — 2 COLUMN LAYOUT
-========================================= */
+/* =========================================================
+   WAKY SERVICES SHOWCASE
+   Final 2 + 1 layout
+========================================================= */
 
-.services-list {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 14px !important;
+
+/* ---------------------------------------------------------
+   COLOUR PALETTE
+--------------------------------------------------------- */
+
+:root {
+
+  --waky-cream: #F6F2E9;
+
+  --waky-green: #B8CCB4;
+
+  --waky-mauve: #C5B8D1;
+
+  /* deliberately muted so it feels matte, not bright */
+  --waky-gold: #DCC77A;
+
+  --waky-ink: #173B2E;
+
+  --waky-muted: #53685F;
+
 }
 
 
-/* All three cards stay the same size */
-.service-item,
-.service-item:nth-child(3) {
-  grid-column: auto !important;
-  min-height: 300px !important;
+/* ---------------------------------------------------------
+   SECTION
+--------------------------------------------------------- */
 
-  display: grid !important;
-  grid-template-columns: 45px minmax(0, 1fr) 38% !important;
+.services-showcase {
 
-  padding: 30px 34px !important;
+  background: var(--waky-cream);
+
+  padding: 105px 0 125px;
+
+  overflow: hidden;
+
 }
 
 
-/* Third card does NOT stretch across both columns */
-.service-item:nth-child(3) {
-  grid-column: auto !important;
+/* ---------------------------------------------------------
+   INTRO
+--------------------------------------------------------- */
+
+.services-intro {
+
+  margin-bottom: 48px;
+
+  max-width: 720px;
+
 }
 
 
-/* Keep the artwork visible */
+.services-intro .eyebrow {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  color: #557367;
+
+  font-family: var(--mono);
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.18em;
+
+}
+
+
+.eyebrow-dot {
+
+  width: 9px;
+
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: var(--waky-gold);
+
+  box-shadow:
+    0 0 0 5px rgba(220, 199, 122, 0.18);
+
+}
+
+
+.services-intro h2 {
+
+  margin: 0;
+
+  max-width: 690px;
+
+  color: var(--waky-ink);
+
+  font-family: var(--display);
+
+  font-size: clamp(38px, 4.5vw, 58px);
+
+  line-height: 0.98;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 700;
+
+}
+
+
+/* ---------------------------------------------------------
+   GRID
+--------------------------------------------------------- */
+
+.services-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  width: 100%;
+
+}
+
+
+/* ---------------------------------------------------------
+   CARD
+--------------------------------------------------------- */
+
+.service-card {
+
+  position: relative;
+
+  height: 330px;
+
+  min-height: 330px;
+
+  overflow: hidden;
+
+  padding: 32px 34px;
+
+  border-radius: 18px;
+
+  color: var(--waky-ink);
+
+  isolation: isolate;
+
+}
+
+
+/* Third card:
+   same exact dimensions,
+   slightly left of centre */
+
+.service-card:nth-child(3) {
+
+  grid-column: 1 / 2;
+
+  margin-left: 8%;
+
+}
+
+
+/* ---------------------------------------------------------
+   CARD COLOURS
+--------------------------------------------------------- */
+
+.service-green {
+
+  background: var(--waky-green);
+
+}
+
+
+.service-mauve {
+
+  background: var(--waky-mauve);
+
+}
+
+
+.service-gold {
+
+  background: var(--waky-gold);
+
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT
+--------------------------------------------------------- */
+
+.service-content {
+
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns: 44px minmax(0, 1fr);
+
+  gap: 12px;
+
+  height: 100%;
+
+}
+
+
+.service-number {
+
+  padding-top: 3px;
+
+  font-family: var(--mono);
+
+  font-size: 12px;
+
+  line-height: 1;
+
+  letter-spacing: 0.05em;
+
+  opacity: 0.72;
+
+}
+
+
+.service-copy {
+
+  max-width: 570px;
+
+}
+
+
+.service-copy h3 {
+
+  margin: 0 0 13px;
+
+  max-width: 590px;
+
+  font-family: var(--display);
+
+  font-size: clamp(30px, 3vw, 44px);
+
+  line-height: 0.98;
+
+  letter-spacing: -0.04em;
+
+  font-weight: 700;
+
+  color: var(--waky-ink);
+
+}
+
+
+.service-copy p {
+
+  margin: 0;
+
+  max-width: 440px;
+
+  color: var(--waky-muted);
+
+  font-family: var(--body);
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+}
+
+
+.service-link {
+
+  position: absolute;
+
+  left: 56px;
+
+  bottom: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding-bottom: 5px;
+
+  border-bottom: 1px solid currentColor;
+
+  color: var(--waky-ink);
+
+  font-family: var(--mono);
+
+  font-size: 12px;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  transition:
+    gap 180ms ease,
+    opacity 180ms ease;
+
+}
+
+
+.service-link span {
+
+  font-size: 15px;
+
+  line-height: 0;
+
+}
+
+
+.service-link:hover {
+
+  gap: 12px;
+
+  opacity: 0.7;
+
+}
+
+
+/* ---------------------------------------------------------
+   ABSTRACT ART
+--------------------------------------------------------- */
+
 .service-art {
-  display: block !important;
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* ---------------------------------------------------------
+   SYSTEM DESIGN ART
+--------------------------------------------------------- */
 
-@media (max-width: 768px) {
+.art-system .art-circle {
 
-  .services-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
+  position: absolute;
+
+  width: 142px;
+
+  height: 142px;
+
+  right: 8%;
+
+  top: 19%;
+
+  border: 3px solid var(--waky-ink);
+
+  border-radius: 50%;
+
+}
+
+
+.art-system .art-square {
+
+  position: absolute;
+
+  width: 30px;
+
+  height: 30px;
+
+  background: #151515;
+
+}
+
+
+.art-square-one {
+
+  right: 28%;
+
+  top: 24%;
+
+}
+
+
+.art-square-two {
+
+  right: 6%;
+
+  top: 58%;
+
+}
+
+
+.art-line {
+
+  position: absolute;
+
+  display: block;
+
+  height: 3px;
+
+  background: var(--waky-ink);
+
+  transform-origin: left center;
+
+}
+
+
+.art-line-one {
+
+  width: 155px;
+
+  right: 26%;
+
+  top: 25%;
+
+  transform: rotate(-27deg);
+
+}
+
+
+.art-line-two {
+
+  width: 120px;
+
+  right: 26%;
+
+  bottom: 16%;
+
+  transform: rotate(34deg);
+
+}
+
+
+/* ---------------------------------------------------------
+   SOFTWARE ART
+--------------------------------------------------------- */
+
+.software-square-one {
+
+  position: absolute;
+
+  width: 66px;
+
+  height: 66px;
+
+  right: 34%;
+
+  bottom: 19%;
+
+  background: #151515;
+
+  transform: rotate(10deg);
+
+}
+
+
+.software-outline {
+
+  position: absolute;
+
+  width: 130px;
+
+  height: 130px;
+
+  right: 9%;
+
+  top: 14%;
+
+  border: 3px solid #151515;
+
+  transform: rotate(10deg);
+
+}
+
+
+.software-small {
+
+  position: absolute;
+
+  width: 52px;
+
+  height: 52px;
+
+  right: 5%;
+
+  bottom: 17%;
+
+  border: 3px solid #151515;
+
+  transform: rotate(10deg);
+
+}
+
+
+.software-line {
+
+  width: 85px;
+
+  right: 18%;
+
+  bottom: 30%;
+
+  transform: rotate(-48deg);
+
+}
+
+
+/* ---------------------------------------------------------
+   AI / AUTOMATION ART
+--------------------------------------------------------- */
+
+.automation-orbit {
+
+  position: absolute;
+
+  width: 175px;
+
+  height: 105px;
+
+  right: 8%;
+
+  top: 29%;
+
+  border: 3px solid #151515;
+
+  border-radius: 50%;
+
+  transform: rotate(-10deg);
+
+}
+
+
+.automation-arrow {
+
+  position: absolute;
+
+  right: 15%;
+
+  top: 41%;
+
+  color: #151515;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 44px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+}
+
+
+.automation-dot {
+
+  position: absolute;
+
+  width: 19px;
+
+  height: 19px;
+
+  background: #151515;
+
+  border-radius: 50%;
+
+}
+
+
+.automation-dot-one {
+
+  right: 38%;
+
+  top: 23%;
+
+}
+
+
+.automation-dot-two {
+
+  right: 29%;
+
+  bottom: 24%;
+
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE HOVER
+--------------------------------------------------------- */
+
+.service-card {
+
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+
+}
+
+
+.service-card:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(23, 59, 46, 0.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .services-showcase {
+
+    padding: 80px 0 100px;
+
   }
 
-  .service-item,
-  .service-item:nth-child(3) {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    min-height: 390px !important;
-    padding: 28px 25px !important;
+
+  .service-card {
+
+    height: 310px;
+
+    min-height: 310px;
+
+    padding: 28px;
+
+  }
+
+
+  .service-copy h3 {
+
+    font-size: 32px;
+
+  }
+
+
+  .service-art {
+
+    opacity: 0.85;
+
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .services-showcase {
+
+    padding: 72px 0 85px;
+
+  }
+
+
+  .services-intro {
+
+    margin-bottom: 34px;
+
+  }
+
+
+  .services-intro .eyebrow {
+
+    margin-bottom: 16px;
+
+  }
+
+
+  .services-intro h2 {
+
+    font-size: 39px;
+
+    line-height: 1;
+
+  }
+
+
+  .services-grid {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+  }
+
+
+  .service-card,
+  .service-card:nth-child(3) {
+
+    width: 100%;
+
+    height: 310px;
+
+    min-height: 310px;
+
+    margin-left: 0;
+
+    padding: 25px;
+
+  }
+
+
+  .service-content {
+
+    grid-template-columns: 35px minmax(0, 1fr);
+
+    gap: 8px;
+
+  }
+
+
+  .service-copy h3 {
+
+    max-width: 290px;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+  }
+
+
+  .service-copy p {
+
+    max-width: 300px;
+
+    font-size: 14px;
+
+  }
+
+
+  .service-link {
+
+    left: 43px;
+
+    bottom: 0;
+
+  }
+
+
+  /* Keep artwork smaller on phones */
+
+  .art-system .art-circle {
+
+    width: 105px;
+
+    height: 105px;
+
+    right: -20px;
+
+    top: 42%;
+
+  }
+
+
+  .art-line-one {
+
+    width: 100px;
+
+    right: 14%;
+
+  }
+
+
+  .art-line-two {
+
+    width: 85px;
+
+    right: 15%;
+
+  }
+
+
+  .software-outline {
+
+    width: 100px;
+
+    height: 100px;
+
+    right: -10px;
+
+  }
+
+
+  .software-square-one {
+
+    width: 50px;
+
+    height: 50px;
+
+    right: 28%;
+
+  }
+
+
+  .software-small {
+
+    width: 38px;
+
+    height: 38px;
+
+    right: 3%;
+
+  }
+
+
+  .automation-orbit {
+
+    width: 125px;
+
+    height: 78px;
+
+    right: -12px;
+
+  }
+
+
+  .automation-arrow {
+
+    right: 14px;
+
+    font-size: 34px;
+
   }
 
 }
