@@ -588,93 +588,107 @@ section{ padding: 92px 0; }
 
 }
 
+
+
 /* =========================================
-   SERVICES SHOWCASE
+   SERVICES SHOWCASE — COMPACT VERSION
 ========================================= */
 
 .services-showcase {
-  padding: 140px 0;
+  padding: 65px 0 80px;
   background: #f6f3ec;
 }
 
 .services-intro {
-  max-width: 700px;
-  margin-bottom: 80px;
+  max-width: 680px;
+  margin-bottom: 32px;
 }
 
 .services-intro h2 {
-  margin: 18px 0 20px;
-  font-size: clamp(3rem, 6vw, 6.5rem);
+  margin: 12px 0 12px;
+  font-size: clamp(2.8rem, 4.6vw, 5.2rem);
   line-height: 0.95;
   letter-spacing: -0.06em;
 }
 
 .services-intro p {
-  max-width: 520px;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  max-width: 500px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 
-/* SERVICE LIST */
+/* =========================================
+   SERVICE LIST
+========================================= */
 
 .services-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
 }
 
 
-/* MAIN CARD */
+/* =========================================
+   MAIN SERVICE CARD
+========================================= */
 
 .service-item {
   position: relative;
-  min-height: 420px;
+  min-height: 210px;
 
   display: grid;
-  grid-template-columns: 90px 1fr 42%;
+  grid-template-columns: 55px 1fr 38%;
 
   overflow: hidden;
-  padding: 48px;
+  padding: 28px 42px;
 
   text-decoration: none;
-  color: #171717;
+  color: #1a2420;
 
   transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .service-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 
-/* COLOURS */
+/* =========================================
+   PASTEL COLOURS
+========================================= */
 
 .service-green {
-  background: #b9cfb5;
+  background: #b8cbb8;
 }
 
 .service-purple {
-  background: #c7b6d3;
+  background: #bcb4cc;
 }
 
 .service-yellow {
-  background: #e6cd7b;
+  background: #e7c873;
 }
 
 
-/* NUMBER */
+/* =========================================
+   NUMBER
+========================================= */
 
 .service-number {
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.85rem;
-  opacity: 0.7;
+  font-size: 0.7rem;
+  padding-top: 5px;
+  opacity: 0.65;
 }
 
 
-/* CONTENT */
+/* =========================================
+   SERVICE CONTENT
+========================================= */
 
 .service-content {
   position: relative;
@@ -691,34 +705,34 @@ section{ padding: 92px 0; }
   margin: 0;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.4rem, 4vw, 5rem);
+  font-size: clamp(2rem, 3.1vw, 3.8rem);
 
   line-height: 0.95;
   letter-spacing: -0.055em;
 }
 
 .service-content p {
-  max-width: 400px;
+  max-width: 390px;
 
-  margin: 28px 0;
+  margin: 12px 0 14px;
 
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 0.82rem;
+  line-height: 1.5;
 }
 
 .service-link {
   margin-top: auto;
 
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.8rem;
+  font-size: 0.65rem;
 
-  border-bottom: 1px solid #171717;
-  padding-bottom: 6px;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
 }
 
 .service-link span {
-  margin-left: 8px;
-  font-size: 1.1rem;
+  margin-left: 6px;
+  font-size: 0.85rem;
 }
 
 
@@ -728,7 +742,7 @@ section{ padding: 92px 0; }
 
 .service-art {
   position: relative;
-  min-height: 320px;
+  min-height: 150px;
 }
 
 
@@ -743,39 +757,39 @@ section{ padding: 92px 0; }
 .system-circle {
   position: absolute;
 
-  width: 240px;
-  height: 240px;
+  width: 145px;
+  height: 145px;
 
-  border: 4px solid #171717;
+  border: 3px solid #171717;
   border-radius: 50%;
 
-  right: 40px;
-  top: 20px;
+  right: 35px;
+  top: 5px;
 }
 
 .system-line {
   position: absolute;
 
-  height: 4px;
+  height: 3px;
   background: #171717;
 
   transform-origin: left center;
 }
 
 .line-one {
-  width: 220px;
+  width: 135px;
 
-  top: 110px;
-  left: 20px;
+  top: 48px;
+  left: 15px;
 
   transform: rotate(-25deg);
 }
 
 .line-two {
-  width: 180px;
+  width: 115px;
 
-  bottom: 70px;
-  left: 80px;
+  bottom: 28px;
+  left: 50px;
 
   transform: rotate(35deg);
 }
@@ -783,20 +797,20 @@ section{ padding: 92px 0; }
 .system-block {
   position: absolute;
 
-  width: 42px;
-  height: 42px;
+  width: 28px;
+  height: 28px;
 
   background: #171717;
 }
 
 .block-one {
-  top: 70px;
-  left: 50px;
+  top: 42px;
+  left: 30px;
 }
 
 .block-two {
-  bottom: 45px;
-  right: 30px;
+  bottom: 20px;
+  right: 25px;
 }
 
 
@@ -807,35 +821,35 @@ section{ padding: 92px 0; }
 .impl-square {
   position: absolute;
 
-  border: 4px solid #171717;
+  border: 3px solid #171717;
 
   transform: rotate(12deg);
 }
 
 .square-one {
-  width: 190px;
-  height: 190px;
+  width: 125px;
+  height: 125px;
 
-  right: 70px;
-  top: 30px;
+  right: 60px;
+  top: 5px;
 }
 
 .square-two {
-  width: 120px;
-  height: 120px;
+  width: 75px;
+  height: 75px;
 
-  left: 50px;
-  bottom: 30px;
+  left: 40px;
+  bottom: 10px;
 
   background: #171717;
 }
 
 .square-three {
-  width: 70px;
-  height: 70px;
+  width: 45px;
+  height: 45px;
 
-  right: 30px;
-  bottom: 40px;
+  right: 25px;
+  bottom: 15px;
 }
 
 
@@ -846,15 +860,15 @@ section{ padding: 92px 0; }
 .auto-orbit {
   position: absolute;
 
-  width: 280px;
-  height: 180px;
+  width: 185px;
+  height: 115px;
 
-  border: 4px solid #171717;
+  border: 3px solid #171717;
 
   border-radius: 50%;
 
-  right: 30px;
-  top: 55px;
+  right: 25px;
+  top: 25px;
 
   transform: rotate(-20deg);
 }
@@ -862,8 +876,8 @@ section{ padding: 92px 0; }
 .auto-dot {
   position: absolute;
 
-  width: 28px;
-  height: 28px;
+  width: 18px;
+  height: 18px;
 
   background: #171717;
 
@@ -871,109 +885,123 @@ section{ padding: 92px 0; }
 }
 
 .dot-one {
-  top: 50px;
-  left: 50px;
+  top: 30px;
+  left: 35px;
 }
 
 .dot-two {
-  bottom: 55px;
-  left: 160px;
+  bottom: 25px;
+  left: 105px;
 }
 
 .dot-three {
-  top: 150px;
-  right: 80px;
+  top: 95px;
+  right: 55px;
 }
 
 .auto-arrow {
   position: absolute;
 
-  font-size: 7rem;
+  font-size: 4.2rem;
 
-  right: 120px;
-  top: 80px;
+  right: 85px;
+  top: 35px;
 
   line-height: 1;
 }
 
 
 /* =========================================
-   MOBILE
+   MOBILE RESPONSIVE
 ========================================= */
 
 @media (max-width: 768px) {
 
   .services-showcase {
-    padding: 90px 0;
+    padding: 65px 0;
   }
 
   .services-intro {
-    margin-bottom: 50px;
+    margin-bottom: 35px;
+  }
+
+  .services-intro h2 {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+  }
+
+  .services-list {
+    gap: 12px;
   }
 
   .service-item {
-
     min-height: auto;
 
     grid-template-columns: 1fr;
 
-    padding: 32px 26px;
+    padding: 28px 25px;
 
-    gap: 30px;
+    gap: 15px;
   }
 
   .service-number {
-    margin-bottom: 10px;
+    position: absolute;
+    top: 22px;
+    right: 25px;
   }
 
   .service-content h3 {
-    font-size: clamp(2.5rem, 11vw, 4rem);
+    font-size: clamp(2.2rem, 10vw, 3.3rem);
+    max-width: 90%;
   }
 
   .service-content p {
-    margin: 20px 0 30px;
-  }
-
-  .service-link {
-    margin-top: 0;
+    font-size: 0.85rem;
+    margin: 14px 0 18px;
   }
 
   .service-art {
-    min-height: 220px;
-    margin-top: 10px;
+    min-height: 130px;
   }
 
   .system-circle {
-    width: 170px;
-    height: 170px;
-
+    width: 125px;
+    height: 125px;
     right: 10px;
   }
 
   .line-one {
-    width: 160px;
+    width: 110px;
   }
 
   .line-two {
-    width: 130px;
+    width: 90px;
   }
 
   .impl-square.square-one {
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
   }
 
   .auto-orbit {
-    width: 220px;
-    height: 140px;
+    width: 160px;
+    height: 100px;
   }
 
   .auto-arrow {
-    font-size: 5rem;
-    right: 70px;
+    font-size: 3.5rem;
+    right: 60px;
   }
 
 }
+
+
+
+
+
+
+
+
+   
 
 /* ---------- Footer ---------- */
 footer.site{
