@@ -587,854 +587,7 @@ section{ padding: 92px 0; }
   }
 
 }
-/* =========================================================
-   WAKY SERVICES SHOWCASE
-   Final 2 + 1 layout
-========================================================= */
 
-
-/* ---------------------------------------------------------
-   COLOUR PALETTE
---------------------------------------------------------- */
-
-:root {
-
-  --waky-cream: #F6F2E9;
-
-  --waky-green: #B8CCB4;
-
-  --waky-mauve: #C5B8D1;
-
-  /* deliberately muted so it feels matte, not bright */
-  --waky-gold: #DCC77A;
-
-  --waky-ink: #173B2E;
-
-  --waky-muted: #53685F;
-
-}
-
-
-/* ---------------------------------------------------------
-   SECTION
---------------------------------------------------------- */
-
-.services-showcase {
-
-  background: var(--waky-cream);
-
-  padding: 105px 0 125px;
-
-  overflow: hidden;
-
-}
-
-
-/* ---------------------------------------------------------
-   INTRO
---------------------------------------------------------- */
-
-.services-intro {
-
-  margin-bottom: 48px;
-
-  max-width: 720px;
-
-}
-
-
-.services-intro .eyebrow {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  margin-bottom: 20px;
-
-  color: #557367;
-
-  font-family: var(--mono);
-
-  font-size: 12px;
-
-  font-weight: 500;
-
-  letter-spacing: 0.18em;
-
-}
-
-
-.eyebrow-dot {
-
-  width: 9px;
-
-  height: 9px;
-
-  border-radius: 50%;
-
-  background: var(--waky-gold);
-
-  box-shadow:
-    0 0 0 5px rgba(220, 199, 122, 0.18);
-
-}
-
-
-.services-intro h2 {
-
-  margin: 0;
-
-  max-width: 690px;
-
-  color: var(--waky-ink);
-
-  font-family: var(--display);
-
-  font-size: clamp(38px, 4.5vw, 58px);
-
-  line-height: 0.98;
-
-  letter-spacing: -0.045em;
-
-  font-weight: 700;
-
-}
-
-
-/* ---------------------------------------------------------
-   GRID
---------------------------------------------------------- */
-
-.services-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 18px;
-
-  width: 100%;
-
-}
-
-
-/* ---------------------------------------------------------
-   CARD
---------------------------------------------------------- */
-
-.service-card {
-
-  position: relative;
-
-  height: 330px;
-
-  min-height: 330px;
-
-  overflow: hidden;
-
-  padding: 32px 34px;
-
-  border-radius: 18px;
-
-  color: var(--waky-ink);
-
-  isolation: isolate;
-
-}
-
-
-/* Third card:
-   same exact dimensions,
-   slightly left of centre */
-
-.service-card:nth-child(3) {
-
-  grid-column: 1 / 2;
-
-  margin-left: 8%;
-
-}
-
-
-/* ---------------------------------------------------------
-   CARD COLOURS
---------------------------------------------------------- */
-
-.service-green {
-
-  background: var(--waky-green);
-
-}
-
-
-.service-mauve {
-
-  background: var(--waky-mauve);
-
-}
-
-
-.service-gold {
-
-  background: var(--waky-gold);
-
-}
-
-
-/* ---------------------------------------------------------
-   CONTENT
---------------------------------------------------------- */
-
-.service-content {
-
-  position: relative;
-
-  z-index: 5;
-
-  display: grid;
-
-  grid-template-columns: 44px minmax(0, 1fr);
-
-  gap: 12px;
-
-  height: 100%;
-
-}
-
-
-.service-number {
-
-  padding-top: 3px;
-
-  font-family: var(--mono);
-
-  font-size: 12px;
-
-  line-height: 1;
-
-  letter-spacing: 0.05em;
-
-  opacity: 0.72;
-
-}
-
-
-.service-copy {
-
-  max-width: 570px;
-
-}
-
-
-.service-copy h3 {
-
-  margin: 0 0 13px;
-
-  max-width: 590px;
-
-  font-family: var(--display);
-
-  font-size: clamp(30px, 3vw, 44px);
-
-  line-height: 0.98;
-
-  letter-spacing: -0.04em;
-
-  font-weight: 700;
-
-  color: var(--waky-ink);
-
-}
-
-
-.service-copy p {
-
-  margin: 0;
-
-  max-width: 440px;
-
-  color: var(--waky-muted);
-
-  font-family: var(--body);
-
-  font-size: 15px;
-
-  line-height: 1.5;
-
-}
-
-
-.service-link {
-
-  position: absolute;
-
-  left: 56px;
-
-  bottom: 0;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  padding-bottom: 5px;
-
-  border-bottom: 1px solid currentColor;
-
-  color: var(--waky-ink);
-
-  font-family: var(--mono);
-
-  font-size: 12px;
-
-  line-height: 1;
-
-  text-decoration: none;
-
-  transition:
-    gap 180ms ease,
-    opacity 180ms ease;
-
-}
-
-
-.service-link span {
-
-  font-size: 15px;
-
-  line-height: 0;
-
-}
-
-
-.service-link:hover {
-
-  gap: 12px;
-
-  opacity: 0.7;
-
-}
-
-
-/* ---------------------------------------------------------
-   ABSTRACT ART
---------------------------------------------------------- */
-
-.service-art {
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 1;
-
-  pointer-events: none;
-
-}
-
-
-/* ---------------------------------------------------------
-   SYSTEM DESIGN ART
---------------------------------------------------------- */
-
-.art-system .art-circle {
-
-  position: absolute;
-
-  width: 142px;
-
-  height: 142px;
-
-  right: 8%;
-
-  top: 19%;
-
-  border: 3px solid var(--waky-ink);
-
-  border-radius: 50%;
-
-}
-
-
-.art-system .art-square {
-
-  position: absolute;
-
-  width: 30px;
-
-  height: 30px;
-
-  background: #151515;
-
-}
-
-
-.art-square-one {
-
-  right: 28%;
-
-  top: 24%;
-
-}
-
-
-.art-square-two {
-
-  right: 6%;
-
-  top: 58%;
-
-}
-
-
-.art-line {
-
-  position: absolute;
-
-  display: block;
-
-  height: 3px;
-
-  background: var(--waky-ink);
-
-  transform-origin: left center;
-
-}
-
-
-.art-line-one {
-
-  width: 155px;
-
-  right: 26%;
-
-  top: 25%;
-
-  transform: rotate(-27deg);
-
-}
-
-
-.art-line-two {
-
-  width: 120px;
-
-  right: 26%;
-
-  bottom: 16%;
-
-  transform: rotate(34deg);
-
-}
-
-
-/* ---------------------------------------------------------
-   SOFTWARE ART
---------------------------------------------------------- */
-
-.software-square-one {
-
-  position: absolute;
-
-  width: 66px;
-
-  height: 66px;
-
-  right: 34%;
-
-  bottom: 19%;
-
-  background: #151515;
-
-  transform: rotate(10deg);
-
-}
-
-
-.software-outline {
-
-  position: absolute;
-
-  width: 130px;
-
-  height: 130px;
-
-  right: 9%;
-
-  top: 14%;
-
-  border: 3px solid #151515;
-
-  transform: rotate(10deg);
-
-}
-
-
-.software-small {
-
-  position: absolute;
-
-  width: 52px;
-
-  height: 52px;
-
-  right: 5%;
-
-  bottom: 17%;
-
-  border: 3px solid #151515;
-
-  transform: rotate(10deg);
-
-}
-
-
-.software-line {
-
-  width: 85px;
-
-  right: 18%;
-
-  bottom: 30%;
-
-  transform: rotate(-48deg);
-
-}
-
-
-/* ---------------------------------------------------------
-   AI / AUTOMATION ART
---------------------------------------------------------- */
-
-.automation-orbit {
-
-  position: absolute;
-
-  width: 175px;
-
-  height: 105px;
-
-  right: 8%;
-
-  top: 29%;
-
-  border: 3px solid #151515;
-
-  border-radius: 50%;
-
-  transform: rotate(-10deg);
-
-}
-
-
-.automation-arrow {
-
-  position: absolute;
-
-  right: 15%;
-
-  top: 41%;
-
-  color: #151515;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 44px;
-
-  font-weight: 400;
-
-  line-height: 1;
-
-}
-
-
-.automation-dot {
-
-  position: absolute;
-
-  width: 19px;
-
-  height: 19px;
-
-  background: #151515;
-
-  border-radius: 50%;
-
-}
-
-
-.automation-dot-one {
-
-  right: 38%;
-
-  top: 23%;
-
-}
-
-
-.automation-dot-two {
-
-  right: 29%;
-
-  bottom: 24%;
-
-}
-
-
-/* ---------------------------------------------------------
-   SUBTLE HOVER
---------------------------------------------------------- */
-
-.service-card {
-
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease;
-
-}
-
-
-.service-card:hover {
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 30px rgba(23, 59, 46, 0.08);
-
-}
-
-
-/* ---------------------------------------------------------
-   TABLET
---------------------------------------------------------- */
-
-@media (max-width: 900px) {
-
-  .services-showcase {
-
-    padding: 80px 0 100px;
-
-  }
-
-
-  .service-card {
-
-    height: 310px;
-
-    min-height: 310px;
-
-    padding: 28px;
-
-  }
-
-
-  .service-copy h3 {
-
-    font-size: 32px;
-
-  }
-
-
-  .service-art {
-
-    opacity: 0.85;
-
-  }
-
-}
-
-
-/* ---------------------------------------------------------
-   MOBILE
---------------------------------------------------------- */
-
-@media (max-width: 700px) {
-
-  .services-showcase {
-
-    padding: 72px 0 85px;
-
-  }
-
-
-  .services-intro {
-
-    margin-bottom: 34px;
-
-  }
-
-
-  .services-intro .eyebrow {
-
-    margin-bottom: 16px;
-
-  }
-
-
-  .services-intro h2 {
-
-    font-size: 39px;
-
-    line-height: 1;
-
-  }
-
-
-  .services-grid {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-
-  }
-
-
-  .service-card,
-  .service-card:nth-child(3) {
-
-    width: 100%;
-
-    height: 310px;
-
-    min-height: 310px;
-
-    margin-left: 0;
-
-    padding: 25px;
-
-  }
-
-
-  .service-content {
-
-    grid-template-columns: 35px minmax(0, 1fr);
-
-    gap: 8px;
-
-  }
-
-
-  .service-copy h3 {
-
-    max-width: 290px;
-
-    font-size: 30px;
-
-    line-height: 1;
-
-  }
-
-
-  .service-copy p {
-
-    max-width: 300px;
-
-    font-size: 14px;
-
-  }
-
-
-  .service-link {
-
-    left: 43px;
-
-    bottom: 0;
-
-  }
-
-
-  /* Keep artwork smaller on phones */
-
-  .art-system .art-circle {
-
-    width: 105px;
-
-    height: 105px;
-
-    right: -20px;
-
-    top: 42%;
-
-  }
-
-
-  .art-line-one {
-
-    width: 100px;
-
-    right: 14%;
-
-  }
-
-
-  .art-line-two {
-
-    width: 85px;
-
-    right: 15%;
-
-  }
-
-
-  .software-outline {
-
-    width: 100px;
-
-    height: 100px;
-
-    right: -10px;
-
-  }
-
-
-  .software-square-one {
-
-    width: 50px;
-
-    height: 50px;
-
-    right: 28%;
-
-  }
-
-
-  .software-small {
-
-    width: 38px;
-
-    height: 38px;
-
-    right: 3%;
-
-  }
-
-
-  .automation-orbit {
-
-    width: 125px;
-
-    height: 78px;
-
-    right: -12px;
-
-  }
-
-
-  .automation-arrow {
-
-    right: 14px;
-
-    font-size: 34px;
-
-  }
-
-}
 
 /* ---------- Footer ---------- */
 footer.site{
@@ -1722,5 +875,768 @@ gap:50px;
 font-size:42px;
 
 }
+
+}
+
+/* =========================================================
+   WAKY SERVICES
+   ISOLATED FINAL VERSION
+========================================================= */
+
+#waky-services {
+
+  --ws-cream: #f6f2e9;
+  --ws-green: #b8ccb4;
+  --ws-purple: #c5b8d1;
+  --ws-gold: #dcc77a;
+
+  --ws-ink: #173b2e;
+  --ws-muted: #53685f;
+
+  background: var(--ws-cream);
+
+  padding: 90px 0 110px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+#waky-services .waky-services-wrap {
+
+  width: min(1350px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+#waky-services .waky-services-intro {
+
+  margin-bottom: 48px;
+
+}
+
+
+#waky-services .waky-services-eyebrow {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+
+  color: #557367;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 12px;
+
+  letter-spacing: 0.18em;
+
+}
+
+
+#waky-services .waky-services-eyebrow span {
+
+  display: block;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #dcc77a;
+
+  box-shadow:
+    0 0 0 5px rgba(220, 199, 122, 0.18);
+
+}
+
+
+#waky-services .waky-services-intro h2 {
+
+  margin: 0;
+
+  max-width: 800px;
+
+  color: var(--ws-ink);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(42px, 5vw, 68px);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 700;
+
+}
+
+
+/* =========================================================
+   TWO-COLUMN GRID
+========================================================= */
+
+#waky-services .waky-services-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+}
+
+
+/* =========================================================
+   ALL THREE CARDS — SAME SIZE
+========================================================= */
+
+#waky-services .waky-service-card {
+
+  position: relative;
+
+  display: block;
+
+  height: 330px;
+
+  min-height: 330px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  padding: 32px 34px;
+
+  border-radius: 18px;
+
+  color: var(--ws-ink);
+
+  text-decoration: none;
+
+  isolation: isolate;
+
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+
+}
+
+
+#waky-services .waky-service-card:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 28px rgba(23, 59, 46, 0.08);
+
+}
+
+
+/* =========================================================
+   CARD COLOURS
+========================================================= */
+
+#waky-services .waky-service-green {
+
+  background: #b8ccb4;
+
+}
+
+
+#waky-services .waky-service-purple {
+
+  background: #c5b8d1;
+
+}
+
+
+#waky-services .waky-service-gold {
+
+  /* intentionally softer / more matte */
+
+  background: #dcc77a;
+
+}
+
+
+/* =========================================================
+   THIRD CARD
+   SAME SIZE, SLIGHTLY OFF CENTRE
+========================================================= */
+
+#waky-services .waky-service-card:nth-child(3) {
+
+  grid-column: 1;
+
+  margin-left: 8%;
+
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+#waky-services .waky-service-number {
+
+  position: absolute;
+
+  left: 34px;
+
+  top: 34px;
+
+  z-index: 5;
+
+  color: var(--ws-ink);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 12px;
+
+  line-height: 1;
+
+  opacity: 0.68;
+
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+#waky-services .waky-service-text {
+
+  position: relative;
+
+  z-index: 5;
+
+  margin-left: 52px;
+
+  max-width: 520px;
+
+}
+
+
+#waky-services .waky-service-text h3 {
+
+  margin: 0 0 15px;
+
+  max-width: 520px;
+
+  color: var(--ws-ink);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(30px, 3vw, 43px);
+
+  line-height: 0.98;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 700;
+
+}
+
+
+#waky-services .waky-service-text p {
+
+  margin: 0;
+
+  max-width: 430px;
+
+  color: var(--ws-muted);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+}
+
+
+#waky-services .waky-service-text span {
+
+  position: absolute;
+
+  top: 235px;
+
+  left: 0;
+
+  padding-bottom: 5px;
+
+  border-bottom: 1px solid var(--ws-ink);
+
+  color: var(--ws-ink);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   ARTWORK BASE
+========================================================= */
+
+#waky-services .waky-service-art {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+}
+
+
+/* =========================================================
+   GREEN ART
+========================================================= */
+
+#waky-services .waky-circle {
+
+  position: absolute;
+
+  width: 145px;
+  height: 145px;
+
+  right: 8%;
+
+  top: 19%;
+
+  border: 3px solid #151515;
+
+  border-radius: 50%;
+
+}
+
+
+#waky-services .waky-line {
+
+  position: absolute;
+
+  display: block;
+
+  height: 3px;
+
+  background: #151515;
+
+  transform-origin: left center;
+
+}
+
+
+#waky-services .waky-line-a {
+
+  width: 145px;
+
+  right: 27%;
+
+  top: 27%;
+
+  transform: rotate(-27deg);
+
+}
+
+
+#waky-services .waky-line-b {
+
+  width: 115px;
+
+  right: 27%;
+
+  bottom: 17%;
+
+  transform: rotate(34deg);
+
+}
+
+
+#waky-services .waky-square {
+
+  position: absolute;
+
+  display: block;
+
+  width: 30px;
+  height: 30px;
+
+  background: #151515;
+
+}
+
+
+#waky-services .waky-square-a {
+
+  right: 29%;
+
+  top: 29%;
+
+}
+
+
+#waky-services .waky-square-b {
+
+  right: 6%;
+
+  top: 59%;
+
+}
+
+
+/* =========================================================
+   PURPLE ART
+========================================================= */
+
+#waky-services .waky-purple-square {
+
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  right: 34%;
+
+  bottom: 18%;
+
+  background: #151515;
+
+  transform: rotate(11deg);
+
+}
+
+
+#waky-services .waky-purple-outline {
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: 10%;
+
+  top: 15%;
+
+  border: 3px solid #151515;
+
+  transform: rotate(11deg);
+
+}
+
+
+#waky-services .waky-purple-small {
+
+  position: absolute;
+
+  width: 48px;
+  height: 48px;
+
+  right: 6%;
+
+  bottom: 17%;
+
+  border: 3px solid #151515;
+
+  transform: rotate(11deg);
+
+}
+
+
+/* =========================================================
+   GOLD ART
+========================================================= */
+
+#waky-services .waky-gold-orbit {
+
+  position: absolute;
+
+  width: 175px;
+  height: 105px;
+
+  right: 8%;
+
+  top: 28%;
+
+  border: 3px solid #151515;
+
+  border-radius: 50%;
+
+  transform: rotate(-10deg);
+
+}
+
+
+#waky-services .waky-gold-arrow {
+
+  position: absolute;
+
+  right: 15%;
+
+  top: 40%;
+
+  color: #151515;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 43px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+}
+
+
+#waky-services .waky-gold-dot {
+
+  position: absolute;
+
+  display: block;
+
+  width: 19px;
+  height: 19px;
+
+  background: #151515;
+
+  border-radius: 50%;
+
+}
+
+
+#waky-services .waky-gold-dot-a {
+
+  right: 38%;
+
+  top: 23%;
+
+}
+
+
+#waky-services .waky-gold-dot-b {
+
+  right: 29%;
+
+  bottom: 23%;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  #waky-services .waky-services-wrap {
+
+    width: min(100% - 48px, 700px);
+
+  }
+
+
+  #waky-services .waky-service-card {
+
+    height: 310px;
+
+    min-height: 310px;
+
+  }
+
+
+  #waky-services .waky-service-text h3 {
+
+    font-size: 32px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  #waky-services {
+
+    padding: 70px 0 85px;
+
+  }
+
+
+  #waky-services .waky-services-wrap {
+
+    width: calc(100% - 36px);
+
+  }
+
+
+  #waky-services .waky-services-intro {
+
+    margin-bottom: 34px;
+
+  }
+
+
+  #waky-services .waky-services-intro h2 {
+
+    font-size: 40px;
+
+    line-height: 0.98;
+
+  }
+
+
+  #waky-services .waky-services-grid {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+  }
+
+
+  #waky-services .waky-service-card,
+  #waky-services .waky-service-card:nth-child(3) {
+
+    width: 100%;
+
+    height: 320px;
+
+    min-height: 320px;
+
+    margin-left: 0;
+
+  }
+
+
+  #waky-services .waky-service-text {
+
+    margin-left: 42px;
+
+  }
+
+
+  #waky-services .waky-service-number {
+
+    left: 25px;
+
+    top: 27px;
+
+  }
+
+
+  #waky-services .waky-service-text h3 {
+
+    font-size: 30px;
+
+  }
+
+
+  #waky-services .waky-service-text p {
+
+    max-width: 290px;
+
+    font-size: 14px;
+
+  }
+
+
+  #waky-services .waky-service-text span {
+
+    top: 235px;
+
+  }
+
+
+  #waky-services .waky-circle {
+
+    width: 105px;
+    height: 105px;
+
+    right: -15px;
+
+    top: 43%;
+
+  }
+
+
+  #waky-services .waky-line-a {
+
+    width: 100px;
+
+    right: 15%;
+
+  }
+
+
+  #waky-services .waky-line-b {
+
+    width: 80px;
+
+    right: 15%;
+
+  }
+
+
+  #waky-services .waky-purple-outline {
+
+    width: 100px;
+    height: 100px;
+
+    right: -10px;
+
+  }
+
+
+  #waky-services .waky-purple-square {
+
+    width: 52px;
+    height: 52px;
+
+    right: 30%;
+
+  }
+
+
+  #waky-services .waky-gold-orbit {
+
+    width: 135px;
+
+    height: 82px;
+
+    right: -15px;
+
+  }
+
+
+  #waky-services .waky-gold-arrow {
+
+    right: 15px;
+
+    font-size: 34px;
+
+  }
 
 }
