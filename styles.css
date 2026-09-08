@@ -587,456 +587,63 @@ section{ padding: 92px 0; }
   }
 
 }
-
-/* =====================================================
-   WAKY SERVICES — FINAL DESKTOP OVERRIDE
-===================================================== */
-
-.services-showcase {
-  background: #f6f3ec;
-  padding: 70px 0 100px;
-}
-
-
-/* ---------- INTRO ---------- */
-
-.services-intro {
-  max-width: 850px;
-  margin: 0 auto 42px 0;
-}
-
-.services-intro .eyebrow {
-  margin-bottom: 16px;
-}
-
-.services-intro h2 {
-  margin: 0;
-  max-width: 780px;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(3rem, 4.8vw, 5.4rem);
-  line-height: 0.94;
-  letter-spacing: -0.065em;
-
-  color: #1f3a2e;
-}
-
-
-/* ---------- SERVICE GRID ---------- */
+/* =========================================
+   WAKY SERVICES — 2 COLUMN LAYOUT
+========================================= */
 
 .services-list {
-  display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  gap: 14px;
-
-  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
 }
 
 
-/* ---------- SERVICE CARDS ---------- */
-
-.service-item {
-  position: relative;
-
-  display: grid;
-
-  grid-template-columns: 45px 1fr;
-
-  min-height: 310px;
-
-  padding: 30px 34px;
-
-  overflow: hidden;
-
-  color: #1f3a2e;
-  text-decoration: none;
-
-  isolation: isolate;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.service-item:hover {
-  transform: translateY(-4px);
-}
-
-
-/* ---------- COLOURS ---------- */
-
-.service-green {
-  background: #b9cdb8;
-}
-
-.service-purple {
-  background: #c5b9d2;
-}
-
-.service-yellow {
-  background: #e7c873;
-}
-
-
-/* ---------- NUMBER ---------- */
-
-.service-number {
-  position: relative;
-  z-index: 5;
-
-  padding-top: 4px;
-
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.7rem;
-
-  opacity: 0.65;
-}
-
-
-/* ---------- CONTENT ---------- */
-
-.service-content {
-  position: relative;
-  z-index: 5;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  max-width: 430px;
-}
-
-.service-content h3 {
-  margin: 0;
-
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(2.2rem, 3.1vw, 3.5rem);
-
-  line-height: 0.94;
-  letter-spacing: -0.055em;
-
-  color: #1f3a2e;
-}
-
-.service-content p {
-  max-width: 350px;
-
-  margin: 18px 0;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 0.82rem;
-  line-height: 1.5;
-
-  color: #40564d;
-}
-
-.service-link {
-  margin-top: auto;
-
-  padding-bottom: 4px;
-
-  border-bottom: 1px solid currentColor;
-
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.66rem;
-
-  color: #1f3a2e;
-}
-
-
-/* =====================================================
-   THIRD CARD
-   Full width underneath the first two
-===================================================== */
-
+/* All three cards stay the same size */
+.service-item,
 .service-item:nth-child(3) {
-  grid-column: 1 / -1;
+  grid-column: auto !important;
+  min-height: 300px !important;
 
-  min-height: 260px;
+  display: grid !important;
+  grid-template-columns: 45px minmax(0, 1fr) 38% !important;
 
-  grid-template-columns: 45px minmax(0, 1fr) 42%;
+  padding: 30px 34px !important;
 }
 
 
-/* ---------- THIRD CARD ART ---------- */
-
-.service-item:nth-child(3) .service-art {
-  min-height: 190px;
+/* Third card does NOT stretch across both columns */
+.service-item:nth-child(3) {
+  grid-column: auto !important;
 }
 
 
-/* =====================================================
-   ART
-===================================================== */
-
+/* Keep the artwork visible */
 .service-art {
-  position: relative;
-  min-height: 220px;
-
-  z-index: 2;
+  display: block !important;
 }
 
 
-/* ---------- SYSTEM DESIGN ---------- */
-
-.system-circle {
-  position: absolute;
-
-  width: 150px;
-  height: 150px;
-
-  right: 25px;
-  top: 5px;
-
-  border: 3px solid #171717;
-  border-radius: 50%;
-}
-
-.system-line {
-  position: absolute;
-
-  height: 3px;
-
-  background: #171717;
-
-  transform-origin: left center;
-}
-
-.line-one {
-  width: 140px;
-
-  top: 45px;
-  left: 5px;
-
-  transform: rotate(-25deg);
-}
-
-.line-two {
-  width: 115px;
-
-  bottom: 25px;
-  left: 45px;
-
-  transform: rotate(35deg);
-}
-
-.system-block {
-  position: absolute;
-
-  width: 29px;
-  height: 29px;
-
-  background: #171717;
-}
-
-.block-one {
-  top: 40px;
-  left: 25px;
-}
-
-.block-two {
-  right: 15px;
-  bottom: 18px;
-}
-
-
-/* ---------- SOFTWARE IMPLEMENTATION ---------- */
-
-.impl-square {
-  position: absolute;
-
-  border: 3px solid #171717;
-
-  transform: rotate(12deg);
-}
-
-.square-one {
-  width: 125px;
-  height: 125px;
-
-  right: 55px;
-  top: 5px;
-}
-
-.square-two {
-  width: 75px;
-  height: 75px;
-
-  left: 35px;
-  bottom: 5px;
-
-  background: #171717;
-}
-
-.square-three {
-  width: 45px;
-  height: 45px;
-
-  right: 15px;
-  bottom: 10px;
-}
-
-
-/* ---------- AI AUTOMATION ---------- */
-
-.auto-orbit {
-  position: absolute;
-
-  width: 190px;
-  height: 115px;
-
-  right: 35px;
-  top: 30px;
-
-  border: 3px solid #171717;
-
-  border-radius: 50%;
-
-  transform: rotate(-20deg);
-}
-
-.auto-dot {
-  position: absolute;
-
-  width: 19px;
-  height: 19px;
-
-  background: #171717;
-
-  border-radius: 50%;
-}
-
-.dot-one {
-  top: 28px;
-  left: 30px;
-}
-
-.dot-two {
-  bottom: 20px;
-  left: 105px;
-}
-
-.dot-three {
-  top: 90px;
-  right: 55px;
-}
-
-.auto-arrow {
-  position: absolute;
-
-  right: 90px;
-  top: 35px;
-
-  font-size: 4rem;
-  line-height: 1;
-
-  color: #171717;
-}
-
-
-/* =====================================================
+/* =========================================
    MOBILE
-===================================================== */
+========================================= */
 
 @media (max-width: 768px) {
 
-  .services-showcase {
-    padding: 55px 0 70px;
-  }
-
-  .services-intro {
-    margin-bottom: 32px;
-  }
-
-  .services-intro h2 {
-    font-size: clamp(2.7rem, 11vw, 4rem);
-  }
-
   .services-list {
-    display: flex;
-    flex-direction: column;
-
-    gap: 12px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
   }
 
   .service-item,
   .service-item:nth-child(3) {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    min-height: 390px;
-
-    padding: 28px 25px;
-
-    gap: 10px;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    min-height: 390px !important;
+    padding: 28px 25px !important;
   }
 
-  .service-number {
-    position: absolute;
-
-    top: 22px;
-    right: 24px;
-  }
-
-  .service-content {
-    padding-top: 12px;
-
-    max-width: 100%;
-  }
-
-  .service-content h3 {
-    max-width: 90%;
-
-    font-size: clamp(2.3rem, 10vw, 3.4rem);
-  }
-
-  .service-content p {
-    max-width: 340px;
-
-    margin: 15px 0 20px;
-  }
-
-  .service-link {
-    margin-top: 0;
-  }
-
-  .service-art,
-  .service-item:nth-child(3) .service-art {
-    min-height: 145px;
-
-    margin-top: 10px;
-  }
-
-  .system-circle {
-    width: 125px;
-    height: 125px;
-
-    right: 8px;
-  }
-
-  .impl-square.square-one {
-    width: 110px;
-    height: 110px;
-  }
-
-  .auto-orbit {
-    width: 160px;
-    height: 100px;
-  }
-
-  .auto-arrow {
-    right: 55px;
-    font-size: 3.4rem;
-  }
 }
-
-
-
 
 /* ---------- Footer ---------- */
 footer.site{
