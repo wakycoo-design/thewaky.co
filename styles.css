@@ -877,152 +877,95 @@ font-size:42px;
 }
 
 }
-
 /* =========================================================
-   WAKY SERVICES
-   ISOLATED FINAL VERSION
-========================================================= */
+   WAKY SERVICES — FINAL
+   ========================================================= */
 
 #waky-services {
-
   --ws-cream: #f6f2e9;
   --ws-green: #b8ccb4;
   --ws-purple: #c5b8d1;
   --ws-gold: #dcc77a;
-
   --ws-ink: #173b2e;
   --ws-muted: #53685f;
 
   background: var(--ws-cream);
-
-  padding: 90px 0 110px;
-
+  padding: 95px 0 115px;
   overflow: hidden;
 }
 
-
-/* =========================================================
-   WRAPPER
-========================================================= */
-
 #waky-services .waky-services-wrap {
-
   width: min(1350px, calc(100% - 80px));
-
   margin: 0 auto;
-
 }
 
 
-/* =========================================================
-   INTRO
-========================================================= */
+/* ---------- Heading ---------- */
 
 #waky-services .waky-services-intro {
-
-  margin-bottom: 48px;
-
+  margin-bottom: 45px;
 }
-
 
 #waky-services .waky-services-eyebrow {
-
   display: flex;
-
   align-items: center;
-
-  gap: 10px;
-
-  margin-bottom: 20px;
+  gap: 9px;
+  margin-bottom: 17px;
 
   color: #557367;
-
   font-family: "JetBrains Mono", monospace;
-
-  font-size: 12px;
-
+  font-size: 11px;
   letter-spacing: 0.18em;
-
 }
-
 
 #waky-services .waky-services-eyebrow span {
-
-  display: block;
-
-  width: 9px;
-  height: 9px;
-
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-
   background: #dcc77a;
-
-  box-shadow:
-    0 0 0 5px rgba(220, 199, 122, 0.18);
-
+  box-shadow: 0 0 0 4px rgba(220, 199, 122, 0.18);
 }
-
 
 #waky-services .waky-services-intro h2 {
-
   margin: 0;
 
-  max-width: 800px;
-
   color: var(--ws-ink);
-
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(42px, 5vw, 68px);
-
-  line-height: 0.95;
-
+  font-size: clamp(42px, 4.4vw, 58px);
+  line-height: 0.98;
   letter-spacing: -0.055em;
-
   font-weight: 700;
-
 }
 
 
-/* =========================================================
-   TWO-COLUMN GRID
-========================================================= */
+/* ---------- Grid ---------- */
 
 #waky-services .waky-services-grid {
-
   display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-
 }
 
 
-/* =========================================================
-   ALL THREE CARDS — SAME SIZE
-========================================================= */
+/* ---------- Cards ---------- */
 
 #waky-services .waky-service-card {
-
   position: relative;
 
   display: block;
 
-  height: 330px;
-
-  min-height: 330px;
+  height: 470px;
+  min-height: 470px;
 
   box-sizing: border-box;
-
   overflow: hidden;
 
-  padding: 32px 34px;
+  padding: 30px 32px;
 
   border-radius: 18px;
 
   color: var(--ws-ink);
-
   text-decoration: none;
 
   isolation: isolate;
@@ -1030,149 +973,86 @@ font-size:42px;
   transition:
     transform 220ms ease,
     box-shadow 220ms ease;
-
 }
-
 
 #waky-services .waky-service-card:hover {
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 28px rgba(23, 59, 46, 0.08);
-
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(23, 59, 46, 0.10);
 }
 
 
-/* =========================================================
-   CARD COLOURS
-========================================================= */
+/* ---------- Card colours ---------- */
 
 #waky-services .waky-service-green {
-
-  background: #b8ccb4;
-
+  background: var(--ws-green);
 }
-
 
 #waky-services .waky-service-purple {
-
-  background: #c5b8d1;
-
+  background: var(--ws-purple);
 }
-
 
 #waky-services .waky-service-gold {
-
-  /* intentionally softer / more matte */
-
-  background: #dcc77a;
-
+  background: var(--ws-gold);
 }
 
 
-/* =========================================================
-   THIRD CARD
-   SAME SIZE, SLIGHTLY OFF CENTRE
-========================================================= */
-
-#waky-services .waky-service-card:nth-child(3) {
-
-  grid-column: 1;
-
-  margin-left: 8%;
-
-}
-
-
-/* =========================================================
-   NUMBER
-========================================================= */
+/* ---------- Number ---------- */
 
 #waky-services .waky-service-number {
-
   position: absolute;
-
-  left: 34px;
-
-  top: 34px;
+  top: 30px;
+  left: 32px;
 
   z-index: 5;
-
-  color: var(--ws-ink);
 
   font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
 
-  font-size: 12px;
-
-  line-height: 1;
-
-  opacity: 0.68;
-
+  opacity: 0.72;
 }
 
 
-/* =========================================================
-   TEXT
-========================================================= */
+/* ---------- Text ---------- */
 
-#waky-services .waky-service-text {
-
+#waky-services .waky-service-content {
   position: relative;
-
   z-index: 5;
 
-  margin-left: 52px;
-
-  max-width: 520px;
-
+  margin-top: 55px;
+  max-width: 285px;
 }
 
-
-#waky-services .waky-service-text h3 {
-
-  margin: 0 0 15px;
-
-  max-width: 520px;
+#waky-services .waky-service-content h3 {
+  margin: 0 0 17px;
 
   color: var(--ws-ink);
 
   font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(30px, 3vw, 43px);
-
-  line-height: 0.98;
-
+  font-size: clamp(27px, 2.4vw, 36px);
+  line-height: 1.0;
   letter-spacing: -0.045em;
-
   font-weight: 700;
-
 }
 
-
-#waky-services .waky-service-text p {
-
+#waky-services .waky-service-content p {
   margin: 0;
 
-  max-width: 430px;
+  max-width: 270px;
 
   color: var(--ws-muted);
 
   font-family: "Inter", sans-serif;
-
-  font-size: 15px;
-
-  line-height: 1.5;
-
+  font-size: 14px;
+  line-height: 1.52;
 }
 
 
-#waky-services .waky-service-text span {
+/* ---------- Link ---------- */
 
+#waky-services .waky-service-link {
   position: absolute;
 
-  top: 235px;
-
+  top: 355px;
   left: 0;
 
   padding-bottom: 5px;
@@ -1182,289 +1062,245 @@ font-size:42px;
   color: var(--ws-ink);
 
   font-family: "JetBrains Mono", monospace;
-
-  font-size: 12px;
+  font-size: 11px;
 
   white-space: nowrap;
-
 }
 
 
 /* =========================================================
-   ARTWORK BASE
-========================================================= */
+   ABSTRACT ART
+   ========================================================= */
 
 #waky-services .waky-service-art {
-
   position: absolute;
-
   inset: 0;
 
   z-index: 2;
 
   pointer-events: none;
-
 }
 
 
-/* =========================================================
-   GREEN ART
-========================================================= */
+/* ---------- GREEN ---------- */
 
 #waky-services .waky-circle {
-
   position: absolute;
 
-  width: 145px;
-  height: 145px;
+  width: 150px;
+  height: 150px;
 
-  right: 8%;
+  right: -15px;
+  bottom: 78px;
 
-  top: 19%;
-
-  border: 3px solid #151515;
-
+  border: 2px solid #173b2e;
   border-radius: 50%;
-
 }
 
-
-#waky-services .waky-line {
-
+#waky-services .waky-circle-dot {
   position: absolute;
 
-  display: block;
+  width: 22px;
+  height: 22px;
 
-  height: 3px;
+  right: 62px;
+  bottom: 170px;
 
-  background: #151515;
-
-  transform-origin: left center;
-
+  background: #173b2e;
+  border-radius: 50%;
 }
-
-
-#waky-services .waky-line-a {
-
-  width: 145px;
-
-  right: 27%;
-
-  top: 27%;
-
-  transform: rotate(-27deg);
-
-}
-
-
-#waky-services .waky-line-b {
-
-  width: 115px;
-
-  right: 27%;
-
-  bottom: 17%;
-
-  transform: rotate(34deg);
-
-}
-
 
 #waky-services .waky-square {
-
   position: absolute;
 
-  display: block;
+  width: 29px;
+  height: 29px;
 
-  width: 30px;
-  height: 30px;
-
-  background: #151515;
-
+  background: #173b2e;
 }
 
-
-#waky-services .waky-square-a {
-
-  right: 29%;
-
-  top: 29%;
-
+#waky-services .waky-square-one {
+  right: 43px;
+  bottom: 118px;
 }
 
-
-#waky-services .waky-square-b {
-
-  right: 6%;
-
-  top: 59%;
-
-}
-
-
-/* =========================================================
-   PURPLE ART
-========================================================= */
-
-#waky-services .waky-purple-square {
-
+#waky-services .waky-line {
   position: absolute;
 
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 2px;
 
-  right: 34%;
+  background: #173b2e;
 
-  bottom: 18%;
+  transform: rotate(-45deg);
+}
 
-  background: #151515;
+#waky-services .waky-line-one {
+  right: 72px;
+  bottom: 42px;
+}
 
-  transform: rotate(11deg);
+#waky-services .waky-corner-circle {
+  position: absolute;
 
+  width: 150px;
+  height: 150px;
+
+  right: -78px;
+  bottom: -78px;
+
+  border-radius: 50%;
+  background: rgba(23, 59, 46, 0.08);
 }
 
 
-#waky-services .waky-purple-outline {
+/* ---------- PURPLE ---------- */
 
+#waky-services .waky-outline-square {
   position: absolute;
 
-  width: 130px;
-  height: 130px;
+  width: 125px;
+  height: 125px;
 
-  right: 10%;
+  right: 35px;
+  bottom: 125px;
 
-  top: 15%;
+  border: 2px solid #173b2e;
 
-  border: 3px solid #151515;
-
-  transform: rotate(11deg);
-
+  transform: rotate(10deg);
 }
 
-
-#waky-services .waky-purple-small {
-
+#waky-services .waky-filled-square {
   position: absolute;
 
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
 
-  right: 6%;
+  right: 145px;
+  bottom: 85px;
 
-  bottom: 17%;
+  background: #173b2e;
 
-  border: 3px solid #151515;
-
-  transform: rotate(11deg);
-
+  transform: rotate(10deg);
 }
 
-
-/* =========================================================
-   GOLD ART
-========================================================= */
-
-#waky-services .waky-gold-orbit {
-
+#waky-services .waky-small-outline {
   position: absolute;
 
-  width: 175px;
-  height: 105px;
+  width: 38px;
+  height: 38px;
 
-  right: 8%;
+  right: 22px;
+  bottom: 65px;
 
-  top: 28%;
+  border: 2px solid #173b2e;
 
-  border: 3px solid #151515;
+  transform: rotate(10deg);
+}
+
+#waky-services .waky-purple-circle {
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  right: -42px;
+  top: -35px;
 
   border-radius: 50%;
 
-  transform: rotate(-10deg);
-
+  background: rgba(23, 59, 46, 0.07);
 }
 
 
-#waky-services .waky-gold-arrow {
+/* ---------- GOLD ---------- */
 
+#waky-services .waky-orbit {
   position: absolute;
 
-  right: 15%;
+  width: 190px;
+  height: 115px;
 
-  top: 40%;
+  right: 25px;
+  bottom: 115px;
 
-  color: #151515;
+  border: 2px solid #173b2e;
+  border-radius: 50%;
+
+  transform: rotate(-12deg);
+}
+
+#waky-services .waky-orbit-dot-one,
+#waky-services .waky-orbit-dot-two {
+  position: absolute;
+
+  width: 21px;
+  height: 21px;
+
+  background: #173b2e;
+  border-radius: 50%;
+}
+
+#waky-services .waky-orbit-dot-one {
+  right: 190px;
+  bottom: 185px;
+}
+
+#waky-services .waky-orbit-dot-two {
+  right: 65px;
+  bottom: 80px;
+}
+
+#waky-services .waky-arrow {
+  position: absolute;
+
+  right: 100px;
+  bottom: 150px;
+
+  color: #173b2e;
 
   font-family: Arial, sans-serif;
-
-  font-size: 43px;
-
-  font-weight: 400;
-
-  line-height: 1;
-
+  font-size: 42px;
+  font-weight: 300;
 }
 
-
-#waky-services .waky-gold-dot {
-
+#waky-services .waky-gold-corner {
   position: absolute;
 
-  display: block;
+  width: 155px;
+  height: 155px;
 
-  width: 19px;
-  height: 19px;
-
-  background: #151515;
+  right: -80px;
+  bottom: -80px;
 
   border-radius: 50%;
 
-}
-
-
-#waky-services .waky-gold-dot-a {
-
-  right: 38%;
-
-  top: 23%;
-
-}
-
-
-#waky-services .waky-gold-dot-b {
-
-  right: 29%;
-
-  bottom: 23%;
-
+  background: rgba(255, 255, 255, 0.10);
 }
 
 
 /* =========================================================
    TABLET
-========================================================= */
+   ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
   #waky-services .waky-services-wrap {
-
-    width: min(100% - 48px, 700px);
-
+    width: calc(100% - 48px);
   }
 
+  #waky-services .waky-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
   #waky-services .waky-service-card {
-
-    height: 310px;
-
-    min-height: 310px;
-
+    height: 440px;
+    min-height: 440px;
   }
 
-
-  #waky-services .waky-service-text h3 {
-
-    font-size: 32px;
-
+  #waky-services .waky-service-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 9px);
   }
 
 }
@@ -1472,171 +1308,52 @@ font-size:42px;
 
 /* =========================================================
    MOBILE
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 700px) {
 
   #waky-services {
-
     padding: 70px 0 85px;
-
   }
-
 
   #waky-services .waky-services-wrap {
-
     width: calc(100% - 36px);
-
   }
-
 
   #waky-services .waky-services-intro {
-
-    margin-bottom: 34px;
-
+    margin-bottom: 32px;
   }
-
 
   #waky-services .waky-services-intro h2 {
-
     font-size: 40px;
-
     line-height: 0.98;
-
   }
-
 
   #waky-services .waky-services-grid {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 12px;
-
   }
-
 
   #waky-services .waky-service-card,
   #waky-services .waky-service-card:nth-child(3) {
-
     width: 100%;
+    max-width: none;
 
-    height: 320px;
-
-    min-height: 320px;
-
-    margin-left: 0;
-
+    height: 420px;
+    min-height: 420px;
   }
 
-
-  #waky-services .waky-service-text {
-
-    margin-left: 42px;
-
+  #waky-services .waky-service-content {
+    margin-top: 52px;
   }
 
-
-  #waky-services .waky-service-number {
-
-    left: 25px;
-
-    top: 27px;
-
+  #waky-services .waky-service-content h3 {
+    font-size: 31px;
   }
 
-
-  #waky-services .waky-service-text h3 {
-
-    font-size: 30px;
-
-  }
-
-
-  #waky-services .waky-service-text p {
-
-    max-width: 290px;
-
-    font-size: 14px;
-
-  }
-
-
-  #waky-services .waky-service-text span {
-
-    top: 235px;
-
-  }
-
-
-  #waky-services .waky-circle {
-
-    width: 105px;
-    height: 105px;
-
-    right: -15px;
-
-    top: 43%;
-
-  }
-
-
-  #waky-services .waky-line-a {
-
-    width: 100px;
-
-    right: 15%;
-
-  }
-
-
-  #waky-services .waky-line-b {
-
-    width: 80px;
-
-    right: 15%;
-
-  }
-
-
-  #waky-services .waky-purple-outline {
-
-    width: 100px;
-    height: 100px;
-
-    right: -10px;
-
-  }
-
-
-  #waky-services .waky-purple-square {
-
-    width: 52px;
-    height: 52px;
-
-    right: 30%;
-
-  }
-
-
-  #waky-services .waky-gold-orbit {
-
-    width: 135px;
-
-    height: 82px;
-
-    right: -15px;
-
-  }
-
-
-  #waky-services .waky-gold-arrow {
-
-    right: 15px;
-
-    font-size: 34px;
-
+  #waky-services .waky-service-link {
+    top: 315px;
   }
 
 }
