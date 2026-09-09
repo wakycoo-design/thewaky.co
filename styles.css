@@ -895,8 +895,9 @@ font-size:42px;
 }
 
 #waky-services .waky-services-wrap {
-  width: min(1350px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 100px));
   margin: 0 auto;
+  transform: translateX(22px);
 }
 
 
@@ -932,7 +933,7 @@ font-size:42px;
   color: var(--ws-ink);
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(42px, 4.4vw, 58px);
+ font-size: clamp(40px, 3.9vw, 53px);
   line-height: 0.98;
   letter-spacing: -0.055em;
   font-weight: 700;
@@ -1311,6 +1312,13 @@ font-size:42px;
    ========================================================= */
 
 @media (max-width: 700px) {
+   
+
+  #waky-services .waky-services-wrap {
+    transform: none;
+  }
+
+}
 
   #waky-services {
     padding: 70px 0 85px;
