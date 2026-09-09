@@ -39,7 +39,7 @@ body{
   margin:0;
   font-family:var(--body);
   color:var(--ink);
-  background:var(--cream);
+  background:var(--white);
   -webkit-font-smoothing:antialiased;
   line-height:1.55;
 }
