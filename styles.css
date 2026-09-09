@@ -39,7 +39,7 @@ body{
   margin:0;
   font-family:var(--body);
   color:var(--ink);
-  background:var(--white);
+  background:#FCFBF7;
   -webkit-font-smoothing:antialiased;
   line-height:1.55;
 }
@@ -128,7 +128,7 @@ header.site{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba  (255,255,255,.90);
+  background:rgba(252,251,247,.90);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
