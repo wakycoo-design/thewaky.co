@@ -895,9 +895,8 @@ font-size:42px;
 }
 
 #waky-services .waky-services-wrap {
-  width: min(1280px, calc(100% - 100px));
+  width: min(1350px, calc(100% - 80px));
   margin: 0 auto;
-  transform: translateX(22px);
 }
 
 
@@ -977,7 +976,7 @@ font-size:42px;
 }
 
 #waky-services .waky-service-card:hover {
-  transform: translateY(-4px);
+ 
   box-shadow: 0 14px 32px rgba(23, 59, 46, 0.10);
 }
 
