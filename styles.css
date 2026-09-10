@@ -636,7 +636,7 @@ section{padding:92px 0}
 /* ---------- Trusted Businesses ---------- */
 
 .trusted-section{
-  padding:88px 0 96px;
+  padding:88px 0 200px;
   overflow:hidden;
 }
 
@@ -700,33 +700,30 @@ section{padding:92px 0}
   padding:0 25px;
 }
 
+
+}
+
 .client-logo img{
   display:block;
   width:auto;
-  height:80px;
-  max-width:300px;
-  max-height:85px;
+  height:90px;
+  max-width:213px;
+  max-height:95px;
   object-fit:contain;
 
-  filter:grayscale(100%);
-  opacity:.45;
+  opacity:.55;
+  transform:scale(1.45);
 
   transition:
-    opacity .3s ease,
-    filter .3s ease,
-    transform .3s ease;
+    opacity .35s ease,
+    transform .35s ease;
 }
 
 .client-logo:hover img{
-  filter:grayscale(0%);
-  opacity:.85;
-  transform:scale(1.03);
+  opacity:1;
+  transform:scale(1.52);
 }
 
-@keyframes marquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
 
 /* ---------- Footer ---------- */
 footer.site{
