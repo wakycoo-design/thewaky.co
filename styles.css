@@ -633,38 +633,54 @@ section{padding:92px 0}
   vertical-align:middle;
 }
 
-/* ---------- Trusted logos ---------- */
+/* ---------- Trusted Businesses ---------- */
 
 .trusted-section{
-  padding:80px 0 70px;
+  padding:88px 0 96px;
   overflow:hidden;
 }
 
+.trusted-section .wrap{
+  width:min(var(--max),calc(100% - 48px));
+  margin:0 auto;
+}
+
 .trusted-label{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:42px;
-  text-align:center;
+  margin:0;
   font-family:var(--mono);
   font-size:12px;
-  letter-spacing:5px;
+  line-height:1.2;
+  letter-spacing:.1em;
   text-transform:uppercase;
   color:var(--ink-faint);
 }
 
 .trusted-label::before{
   content:"";
-  width:9px;
-  height:9px;
-  flex-shrink:0;
+  display:inline-block;
+  width:8px;
+  height:8px;
+  margin-right:10px;
+  vertical-align:1px;
   border-radius:50%;
   background:var(--gold);
 }
 
+.trusted-title{
+  margin:14px 0 0;
+  max-width:720px;
+  font-size:42px;
+  line-height:1.15;
+  letter-spacing:-.035em;
+  font-weight:600;
+  color:var(--forest);
+}
+
+/* ---------- Logo marquee ---------- */
+
 .logo-marquee{
   width:100%;
+  margin-top:58px;
   overflow:hidden;
 }
 
@@ -679,113 +695,37 @@ section{padding:92px 0}
   display:flex;
   align-items:center;
   justify-content:center;
-  flex:0 0 240px;
-  height:85px;
-  padding:0 35px;
-  font-family:var(--display);
-  font-size:17px;
-  font-weight:600;
-  letter-spacing:1px;
-  color:var(--forest);
-  white-space:nowrap;
+  flex:0 0 220px;
+  height:90px;
+  padding:0 25px;
 }
 
 .client-logo img{
   display:block;
   width:auto;
-  height:50px;
-  max-width:170px;
-  max-height:55px;
+  height:61px;
+  max-width:213px;
+  max-height:66px;
   object-fit:contain;
+
   filter:grayscale(100%);
   opacity:.45;
-  transition:opacity .3s ease,filter .3s ease,transform .3s ease;
+
+  transition:
+    opacity .3s ease,
+    filter .3s ease,
+    transform .3s ease;
 }
 
-.client-logo img:hover{
+.client-logo:hover img{
   filter:grayscale(0%);
-  opacity:1;
-  transform:scale(1.05);
+  opacity:.85;
+  transform:scale(1.03);
 }
 
 @keyframes marquee{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
-}
-
-/* ---------- Existing logo-strip compatibility ---------- */
-
-.logo-strip{
-  width:100%;
-  overflow:hidden;
-}
-
-.logo-strip .logo-track{
-  display:flex;
-  gap:16px;
-  width:max-content;
-  animation:scrollLogos 22s linear infinite;
-}
-
-.logo-track .pill{flex-shrink:0}
-
-@keyframes scrollLogos{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
-
-/* ---------- Responsive ---------- */
-
-@media (max-width:1100px){
-  .nav-links{gap:28px;font-size:17px}
-  .brand span{font-size:36px}
-  .hero-grid>:first-child{transform:none}
-  .hero-art img{width:110%;transform:none}
-}
-
-@media (max-width:900px){
-  .hero-grid,.showcase-grid{grid-template-columns:1fr}
-  .cards-3{grid-template-columns:1fr}
-  .showcase{padding:40px 24px}
-  .cta-banner{padding:44px 24px}
-  .nav-links{display:none}
-  .hero{padding-top:64px}
-  .hero-art{margin-top:20px}
-  .hero-art img{width:100%}
-  .avatar{width:190px;height:190px}
-  .client-logo{flex-basis:180px;height:70px;padding:0 25px}
-  .client-logo img{max-width:130px;max-height:45px}
-}
-
-@media (max-width:700px){
-  .wrap{padding:0 18px}
-  section{padding:70px 0}
-  .hero{padding:60px 0 30px}
-  .hero h1{font-size:clamp(38px,11vw,50px)}
-  .hero .lede{font-size:16px}
-  .flow-card{padding:22px;border-radius:20px}
-  .strip{padding:24px 0}
-  .strip-inner{align-items:flex-start}
-  .pill-row{width:100%}
-  .section-head{margin-bottom:36px}
-  .section-head h2{font-size:40px}
-  .cards-3{gap:18px;margin-top:36px}
-  .card{padding:30px 24px}
-  .avatar{width:170px;height:170px;margin-bottom:24px}
-  .showcase{border-radius:22px;padding:36px 22px}
-  .stage-row{gap:10px}
-  .arrow{display:none}
-  .cta-banner{border-radius:22px;padding:40px 22px}
-  .trusted-section{padding:60px 0}
-  .trusted-label{margin-bottom:30px;font-size:10px;letter-spacing:3px}
-  .client-logo{flex-basis:180px;height:70px;padding:0 25px}
-  .client-logo img{max-width:130px;max-height:45px}
-}
-
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .pulse,.logo-track,.logo-strip .logo-track{animation:none}
-  .btn,.card,.pill,.client-logo img{transition:none}
 }
 
 /* ---------- Footer ---------- */
