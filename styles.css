@@ -493,18 +493,19 @@ section{padding:92px 0}
   object-fit:cover;
 }
 
-.cards-3 .card:nth-child(1) .avatar{
-  box-shadow:0 0 0 5px rgba(184,204,180,.32);
+.cards-3 .card:nth-child(1){
+  border-color:rgba(184,204,180,.65);
 }
 
-.cards-3 .card:nth-child(2) .avatar{
-  box-shadow:0 0 0 5px rgba(197,184,209,.30);
+.cards-3 .card:nth-child(2){
+  border-color:rgba(197,184,209,.65);
 }
 
-.cards-3 .card:nth-child(3) .avatar{
-  box-shadow:0 0 0 5px rgba(220,199,122,.30);
+.cards-3 .card:nth-child(3){
+  border-color:rgba(220,199,122,.65);
 }
 
+/* ---------- Dark showcase ---------- */
 /* ---------- Dark showcase ---------- */
 
 .showcase{
