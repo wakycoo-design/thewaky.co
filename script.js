@@ -149,7 +149,7 @@ if (bookButton) {
 
       console.log("📦 WORKER RESPONSE:", data);
 
-      alert(data.message);
+      alert(JSON.stringify(data, null, 2));
 
     } catch (error) {
 
