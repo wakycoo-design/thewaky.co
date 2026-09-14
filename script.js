@@ -143,26 +143,17 @@ if (bookButton) {
         }
       );
 
-      console.log(
-        "📥 WORKER STATUS:",
-        response.status
-      );
+      console.log("📥 WORKER STATUS:", response.status);
 
       const data = await response.json();
 
-      console.log(
-        "📦 WORKER RESPONSE:",
-        data
-      );
+      console.log("📦 WORKER RESPONSE:", data);
 
       alert(data.message);
 
     } catch (error) {
 
-      console.error(
-        "❌ WORKER CONNECTION ERROR:",
-        error
-      );
+      console.error("❌ WORKER CONNECTION ERROR:", error);
 
       alert("Worker connection failed. Check Console.");
 
