@@ -1,24 +1,34 @@
 // ---- Waky shared behaviour ----
 
-// Replace with the real WhatsApp business number (country code + number, no + or spaces)
+// Replace with the real WhatsApp business number
 const WHATSAPP_NUMBER = "919105999888";
 
 function waLink(message) {
   const text = encodeURIComponent(
     message || "Hi Waky, I'd like to book a free consultation."
   );
+
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 }
 
+
+// ---- WhatsApp Buttons ----
+
 document.querySelectorAll("[data-wa-button]").forEach(el => {
-  el.setAttribute("href", waLink(el.getAttribute("data-wa-message")));
+  el.setAttribute(
+    "href",
+    waLink(el.getAttribute("data-wa-message"))
+  );
+
   el.setAttribute("target", "_blank");
   el.setAttribute("rel", "noopener");
 });
 
 
-// Mark current nav link active
-const path = window.location.pathname.split("/").pop() || "index.html";
+// ---- Mark Current Navigation Link Active ----
+
+const path =
+  window.location.pathname.split("/").pop() || "index.html";
 
 document.querySelectorAll(".nav-links a").forEach(a => {
   if (a.getAttribute("href") === path) {
@@ -27,13 +37,14 @@ document.querySelectorAll(".nav-links a").forEach(a => {
 });
 
 
-
-
-// ---- Contact Form ----
+// ========================================================
+// CONTACT FORM
+// ========================================================
 
 const form = document.getElementById("contact-form");
 
 if (form) {
+
   form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
@@ -59,20 +70,30 @@ if (form) {
 
         document.querySelector(".contact-left").style.display = "none";
 
-        document.querySelector(".contact-layout").style.gridTemplateColumns = "1fr";
+        document.querySelector(
+          ".contact-layout"
+        ).style.gridTemplateColumns = "1fr";
 
-        document.getElementById("contact-card").style.maxWidth = "650px";
+        document.getElementById(
+          "contact-card"
+        ).style.maxWidth = "650px";
 
-        document.getElementById("contact-card").style.margin = "0 auto";
+        document.getElementById(
+          "contact-card"
+        ).style.margin = "0 auto";
 
-        document.querySelector("footer.site").style.display = "none";
+        document.querySelector(
+          "footer.site"
+        ).style.display = "none";
 
         document.getElementById("contact-card").innerHTML = `
           <h2>✓ Request received!</h2>
 
           <p>Thanks for reaching out to Waky.</p>
 
-          <p>We'll review your requirements and get back to you shortly.</p>
+          <p>
+            We'll review your requirements and get back to you shortly.
+          </p>
 
           <a href="index.html" class="btn btn-primary">
             Back to Home
@@ -88,56 +109,33 @@ if (form) {
     } catch (error) {
 
       console.error("Contact Form Error:", error);
+
       alert("Network error. Please try again.");
 
     }
 
   });
+
 }
-document.getElementById("testOtpBtn").addEventListener("click", async function () {
 
-    console.log("🚀 BUTTON CLICKED");
 
-    const phone = "+919753999888";
+// ========================================================
+// BOOK APPOINTMENT → CLOUDFLARE WORKER TEST
+// ========================================================
 
-    try {
-        console.log("📡 CALLING ZOHO API...");
-
-        
-
-        const response = await fetch(
-            "https://www.zohoapis.in/creator/custom/mindlappvtltd/Send_OTP?publickey=xRTH2rD0N9uCxyZSeYp3Fe53p",
-            {
-                method: "POST",
-                body: JSON.stringify({
-                    Phone: "+919753999888"
-                })
-            }
-        );
-
-        console.log("📥 RESPONSE STATUS:", response.status);
-
-        const result = await response.text();
-
-        console.log("📦 ZOHO RESPONSE:", result);
-
-        alert("SUCCESS! Response received. Check Console.");
-
-    } catch (error) {
-
-        console.error("❌ FETCH ERROR:", error);
-
-        alert("API FAILED! Check Console.");
-    }
-
-});
-
-const bookButton = document.getElementById("bookAppointmentBtn");
+const bookButton =
+  document.getElementById("bookAppointmentBtn");
 
 if (bookButton) {
-  bookButton.addEventListener("click", async () => {
+
+  bookButton.addEventListener("click", async function () {
+
+    console.log("🚀 BOOK BUTTON CLICKED");
 
     try {
+
+      console.log("📡 CALLING CLOUDFLARE WORKER...");
+
       const response = await fetch(
         "https://waky-api-proxy.info-dville.workers.dev",
         {
@@ -145,14 +143,31 @@ if (bookButton) {
         }
       );
 
+      console.log(
+        "📥 WORKER STATUS:",
+        response.status
+      );
+
       const data = await response.json();
+
+      console.log(
+        "📦 WORKER RESPONSE:",
+        data
+      );
 
       alert(data.message);
 
     } catch (error) {
-      console.error(error);
-      alert("Worker connection failed.");
+
+      console.error(
+        "❌ WORKER CONNECTION ERROR:",
+        error
+      );
+
+      alert("Worker connection failed. Check Console.");
+
     }
 
   });
+
 }
