@@ -27,6 +27,8 @@ document.querySelectorAll(".nav-links a").forEach(a => {
 });
 
 
+
+
 // ---- Contact Form ----
 
 const form = document.getElementById("contact-form");
@@ -130,3 +132,27 @@ document.getElementById("testOtpBtn").addEventListener("click", async function (
 
 });
 
+const bookButton = document.getElementById("bookAppointmentBtn");
+
+if (bookButton) {
+  bookButton.addEventListener("click", async () => {
+
+    try {
+      const response = await fetch(
+        "https://waky-api-proxy.info-dville.workers.dev",
+        {
+          method: "POST"
+        }
+      );
+
+      const data = await response.json();
+
+      alert(data.message);
+
+    } catch (error) {
+      console.error(error);
+      alert("Worker connection failed.");
+    }
+
+  });
+}
