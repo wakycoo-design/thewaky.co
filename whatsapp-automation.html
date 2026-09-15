@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Turn WhatsApp conversations into a dependable customer journey with Waky automation.">
+  <title>WhatsApp Automation — Waky</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root { --wa:#24c78b; --wa-dark:#0d7d54; --pale-wa:#e7f7ef; }
+    .wa-page { overflow:hidden; }
+    .wa-hero { padding:82px 0 72px; background:linear-gradient(125deg,#f8f7f1 0%,#f7fbf7 54%,#e8f3e9 100%); }
+    .wa-hero-grid { display:grid; grid-template-columns:minmax(0,1.04fr) minmax(390px,.96fr); align-items:center; gap:66px; }
+    .wa-kicker { display:inline-flex; align-items:center; gap:9px; padding:8px 12px; border:1px solid #b7d8c5; border-radius:100px; background:#fff; color:var(--wa-dark); font:500 11px var(--mono); letter-spacing:.1em; }
+    .wa-kicker i { display:block; width:8px; height:8px; border-radius:50%; background:var(--wa); box-shadow:0 0 0 4px #d8f4e5; }
+    .wa-copy h1 { max-width:680px; margin:20px 0 22px; font-size:clamp(46px,5.4vw,78px); line-height:.99; letter-spacing:-.055em; }
+    .wa-copy h1 em { font-style:normal; color:var(--wa-dark); position:relative; white-space:nowrap; }
+    .wa-copy h1 em::after { content:""; position:absolute; z-index:0; height:11px; border-radius:30px; left:2px; right:1px; bottom:3px; background:#bdebd2; transform:rotate(-1.5deg); }
+    .wa-copy h1 em span { position:relative; z-index:1; }
+    .wa-lede { max-width:570px; font-size:18px; line-height:1.7; color:#4d685c; }
+    .wa-actions { display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:30px; }
+    .wa-button { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:15px 22px; border-radius:10px; background:var(--forest); color:white; font-weight:700; box-shadow:0 10px 18px rgba(23,59,46,.15); transition:transform .2s,background .2s; }
+    .wa-button:hover { background:var(--wa-dark); transform:translateY(-2px); }
+    .wa-button svg { width:19px; height:19px; }
+    .wa-text-link { padding:12px 4px; color:var(--forest); font-weight:700; }
+    .wa-proof { display:flex; align-items:center; gap:11px; margin-top:30px; color:#61766a; font-size:13px; }
+    .proof-avatars { display:flex; }
+    .proof-avatars b { display:grid; place-items:center; width:29px; height:29px; margin-right:-7px; border:2px solid #f8f9f3; border-radius:50%; color:#fff; font-size:10px; background:#6e9f83; }
+    .proof-avatars b:nth-child(2){background:#d0ab64}.proof-avatars b:nth-child(3){background:#8d789b}
+    .wa-art { position:relative; min-height:478px; }
+    .orbit { position:absolute; width:440px; height:440px; top:20px; left:50%; border:1px dashed #a8cbb5; border-radius:50%; transform:translateX(-50%); }
+    .orbit::before { content:""; position:absolute; width:306px; height:306px; top:66px; left:66px; border-radius:50%; background:#d8ebd9; opacity:.8; }
+    .chat-window { position:absolute; z-index:2; top:8px; left:50%; width:318px; overflow:hidden; border:8px solid #173b2e; border-radius:31px; background:#e8f4eb; box-shadow:0 25px 48px rgba(23,59,46,.21); transform:translateX(-50%) rotate(2deg); }
+    .chat-head { display:flex; align-items:center; gap:9px; padding:17px 14px 13px; color:#fff; background:#1e6949; }
+    .chat-head .avatar { display:grid; place-items:center; width:31px; height:31px; border-radius:50%; background:#e7c873; color:var(--forest); font-family:var(--display); font-weight:700; }
+    .chat-head strong { display:block; font-size:12px; line-height:1.15; }.chat-head small { color:#c9e5d2; font-size:9px; }.chat-head span { margin-left:auto; font-size:17px; }
+    .chat-body { min-height:343px; padding:16px 13px; background-color:#e8f4eb; background-image:radial-gradient(#cfe5d6 1px,transparent 1px); background-size:17px 17px; }
+    .message { width:max-content; max-width:92%; margin:0 0 11px; padding:9px 10px; border-radius:4px 10px 10px; background:#fff; box-shadow:0 2px 5px rgba(23,59,46,.08); color:#365447; font-size:11px; line-height:1.45; }.message small { display:block; margin-top:3px; color:#93a89d; font-size:8px; text-align:right; }
+    .message.out { margin-left:auto; border-radius:10px 4px 10px 10px; background:#c8f4d6; }
+    .quick-reply { display:flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid #a7ddbb; border-radius:8px; background:white; color:#197f50; font-size:10px; }.quick-reply b { font-size:15px; font-weight:400; }
+    .floating-card { position:absolute; z-index:3; display:flex; align-items:center; gap:10px; padding:11px 13px; border:1px solid #d3e5d8; border-radius:12px; background:#fff; box-shadow:0 14px 27px rgba(23,59,46,.12); color:#3c5b4c; font-size:11px; font-weight:700; }.floating-card i { display:grid; place-items:center; width:27px; height:27px; border-radius:8px; background:#d9f3e2; color:#16764b; font-style:normal; font-size:15px; }
+    .card-one { top:70px; right:0; }.card-two { bottom:30px; left:8px; }.card-two i { background:#fff1c6; color:#9c7312; }
+    .logos { padding:30px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#fff; }.logo-row { display:flex; align-items:center; justify-content:space-between; gap:22px; }.logo-row p { margin:0; color:#87938c; font:500 10px var(--mono); letter-spacing:.12em; white-space:nowrap; }.logo-row strong { color:#769083; font:600 16px var(--display); letter-spacing:-.04em; white-space:nowrap; }.logo-row strong:nth-of-type(2){color:#a07e46}.logo-row strong:nth-of-type(3){color:#6b829f}.logo-row strong:nth-of-type(4){color:#5f8573}
+    .section { padding:102px 0; }.section-intro { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:end; margin-bottom:45px; }.section-intro h2 { margin:0; max-width:540px; font-size:clamp(34px,4vw,55px); line-height:1.04; letter-spacing:-.045em; }.section-intro p { max-width:480px; margin:0; font-size:16px; line-height:1.65; }
+    .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #dbe5dd; border-left:1px solid #dbe5dd; }.feature { min-height:252px; padding:28px; border-right:1px solid #dbe5dd; border-bottom:1px solid #dbe5dd; background:#fff; transition:background .2s; }.feature:hover { background:#f2f8f2; }.feature-icon { display:grid; place-items:center; width:42px; height:42px; margin-bottom:31px; border-radius:12px; background:#e1f1e5; color:#19764d; font-size:20px; }.feature h3 { margin-bottom:10px; font-size:19px; }.feature p { font-size:14px; line-height:1.6; }
+    .workflow { background:var(--forest); color:#fff; }.workflow h2 { color:#fff; }.workflow .section-intro p { color:#b9ccc0; }.flow { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:55px; }.flow-step { position:relative; min-height:210px; padding:26px 26px 20px; border-top:1px solid rgba(255,255,255,.25); border-left:1px solid rgba(255,255,255,.17); }.flow-step:first-child { border-left:0; }.step-num { display:block; margin-bottom:43px; color:#e7c873; font:500 11px var(--mono); letter-spacing:.12em; }.flow-step h3 { color:#fff; font-size:19px; }.flow-step p { color:#b9ccc0; font-size:13px; line-height:1.55; }.flow-step::after { content:"→"; position:absolute; top:-14px; right:-11px; z-index:1; color:#e7c873; font-size:23px; }.flow-step:last-child::after { display:none; }
+    .result { padding:92px 0; background:#eef4ed; }.result-grid { display:grid; grid-template-columns:.93fr 1.07fr; gap:75px; align-items:center; }.result h2 { max-width:460px; font-size:clamp(36px,4vw,56px); letter-spacing:-.05em; }.result p { max-width:465px; font-size:16px; line-height:1.65; }.numbers { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }.number { min-height:154px; padding:25px; border-radius:15px; background:#fff; }.number:nth-child(2) { background:#d9ead9; }.number:nth-child(3) { background:#e8dded; }.number:nth-child(4) { background:#f4e9c9; }.number b { display:block; margin-bottom:6px; font:700 40px/1 var(--display); letter-spacing:-.06em; }.number span { color:#587064; font-size:13px; font-weight:600; }
+    .wa-cta { padding:88px 0; text-align:center; background:#fffdf8; }.wa-cta .inner { padding:60px 25px; border-radius:22px; background:linear-gradient(115deg,#d8ead7,#f0e6bd); }.wa-cta h2 { max-width:720px; margin:0 auto 16px; font-size:clamp(36px,4.2vw,58px); letter-spacing:-.055em; }.wa-cta p { max-width:505px; margin:0 auto 28px; font-size:16px; }.wa-cta .wa-button { background:var(--forest); }
+    .wa-footer { padding:28px 0; border-top:1px solid var(--line); background:#fcfbf7; }.wa-footer .wrap { display:flex; align-items:center; justify-content:space-between; gap:20px; }.wa-footer p { margin:0; font-size:12px; }.back-link { font-size:13px; font-weight:700; }
+    @media (max-width:850px) { .nav-links{gap:18px;font-size:15px}.wa-hero{padding-top:60px}.wa-hero-grid,.result-grid{grid-template-columns:1fr;gap:36px}.wa-art{max-width:470px;width:100%;margin:auto}.section-intro{grid-template-columns:1fr;gap:14px}.feature-grid{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.flow-step:nth-child(3){border-left:0}.flow-step::after{display:none}.logo-row p{display:none} }
+    @media (max-width:580px) { .wrap{padding-left:20px;padding-right:20px}.nav{padding:15px 0}.brand svg{width:38px;height:38px}.brand span{font-size:30px}.nav-links,.nav-cta{display:none}.wa-hero{padding:48px 0}.wa-copy h1{font-size:45px}.wa-lede{font-size:16px}.wa-art{min-height:420px;transform:scale(.86);transform-origin:top center;margin-bottom:-57px}.card-one{right:-13px}.card-two{left:-8px}.logo-row{justify-content:space-around}.logo-row strong{font-size:13px}.logo-row strong:nth-of-type(4){display:none}.section{padding:70px 0}.feature-grid,.flow{grid-template-columns:1fr}.feature{min-height:210px}.flow-step,.flow-step:nth-child(3){border-left:0}.result{padding:67px 0}.wa-footer .wrap{align-items:flex-start;flex-direction:column}.numbers{gap:9px}.number{min-height:130px;padding:18px}.number b{font-size:34px} }
+  </style>
+</head>
+<body class="wa-page">
+  <header class="site">
+    <div class="wrap nav">
+      <a href="index.html" class="brand" aria-label="Waky home"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 14 L14.5 34 L24 17 L33.5 34 L42 14" fill="none" stroke="#1F3A2E" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="17" r="3.4" fill="#E7C873"/></svg><span>waky</span></a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html" class="active">Solutions</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Let's talk</a></nav>
+      <div class="nav-cta"><a class="btn btn-primary btn-sm" href="contact.html">Meet Waky</a></div>
+    </div>
+  </header>
+  <main>
+    <section class="wa-hero">
+      <div class="wrap wa-hero-grid">
+        <div class="wa-copy">
+          <div class="wa-kicker"><i></i> WHATSAPP AUTOMATION</div>
+          <h1>Make every chat feel <em><span>personal.</span></em></h1>
+          <p class="wa-lede">Turn WhatsApp into your most dependable customer channel. We design the flows, connect the tools and automate the busywork—so your team can focus on the conversations that matter.</p>
+          <div class="wa-actions"><a class="wa-button" href="contact.html">Build my WhatsApp flow <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="wa-text-link" href="#how-it-works">See how it works ↓</a></div>
+          <div class="wa-proof"><div class="proof-avatars"><b>R</b><b>N</b><b>A</b></div><span>Built for teams that want to reply better, not faster.</span></div>
+        </div>
+        <div class="wa-art" aria-label="An example WhatsApp automation conversation">
+          <div class="orbit"></div>
+          <div class="floating-card card-one"><i>✓</i><span>Lead qualified<br><small>CRM updated</small></span></div>
+          <div class="chat-window"><div class="chat-head"><div class="avatar">W</div><div><strong>Waky concierge</strong><small>online · replies instantly</small></div><span>⋮</span></div><div class="chat-body"><div class="message">Hi Maya! Welcome to Waky 👋<br>What can we help you with?<small>10:02</small></div><div class="quick-reply"><b>⌁</b> I need an automation</div><div class="message out">I need an automation<small>10:03 ✓✓</small></div><div class="message">Great. Is this for sales, support or operations?<small>10:03</small></div><div class="quick-reply"><b>⌁</b> Sales follow-ups</div></div></div>
+          <div class="floating-card card-two"><i>↗</i><span>Follow-up scheduled<br><small>for tomorrow, 10:00</small></span></div>
+        </div>
+      </div>
+    </section>
+    <section class="logos"><div class="wrap logo-row"><p>CONNECTS WITH THE TOOLS YOU ALREADY USE</p><strong>hubspot</strong><strong>shopify</strong><strong>razorpay</strong><strong>zoho</strong></div></section>
+    <section class="section"><div class="wrap"><div class="section-intro"><h2>More useful conversations. Less follow-up chaos.</h2><p>We map your customer journey first, then build WhatsApp automation that gives people timely, helpful answers without making the experience feel robotic.</p></div><div class="feature-grid"><article class="feature"><div class="feature-icon">⌁</div><h3>Instant lead response</h3><p>Capture, qualify and route enquiries while the customer is still ready to talk.</p></article><article class="feature"><div class="feature-icon">↗</div><h3>Smart follow-ups</h3><p>Nudge at the right moment based on what customers clicked, bought or left behind.</p></article><article class="feature"><div class="feature-icon">◎</div><h3>Human hand-offs</h3><p>Let your team enter the conversation with the context they need, when it matters.</p></article><article class="feature"><div class="feature-icon">▣</div><h3>Connected operations</h3><p>Keep your CRM, store, calendar and internal tools working from the same signal.</p></article><article class="feature"><div class="feature-icon">✓</div><h3>Order &amp; service updates</h3><p>Give customers proactive answers on orders, appointments and support requests.</p></article><article class="feature"><div class="feature-icon">⌘</div><h3>Clear reporting</h3><p>See what is being asked, where customers drop off and what drives action.</p></article></div></div></section>
+    <section class="section workflow" id="how-it-works"><div class="wrap"><div class="section-intro"><h2>Designed around your business—not a generic bot.</h2><p>Every system starts with a simple question: where does a good conversation currently get lost?</p></div><div class="flow"><article class="flow-step"><span class="step-num">01 · DISCOVER</span><h3>Find the friction</h3><p>We identify repeated questions, stalled leads and manual steps worth removing.</p></article><article class="flow-step"><span class="step-num">02 · DESIGN</span><h3>Map the journey</h3><p>We shape the prompts, branches and hand-offs around real customer needs.</p></article><article class="flow-step"><span class="step-num">03 · CONNECT</span><h3>Build the system</h3><p>We connect WhatsApp to the software and information your team relies on.</p></article><article class="flow-step"><span class="step-num">04 · IMPROVE</span><h3>Learn &amp; refine</h3><p>We monitor the signals and continuously improve the flow as you grow.</p></article></div></div></section>
+    <section class="result"><div class="wrap result-grid"><div><div class="wa-kicker"><i></i> THE OUTCOME</div><h2>Customer service that scales with care.</h2><p>Good automation removes friction without removing the human feeling. It gives your team more context, your customers more confidence and your business a system that keeps showing up.</p><a class="wa-text-link" href="contact.html">Talk through your use case →</a></div><div class="numbers"><div class="number"><b>Always</b><span>On-hand first response</span></div><div class="number"><b>1</b><span>Shared view of every chat</span></div><div class="number"><b>0</b><span>Lost leads from delayed replies</span></div><div class="number"><b>∞</b><span>Room to grow your flows</span></div></div></div></section>
+    <section class="wa-cta"><div class="wrap"><div class="inner"><div class="wa-kicker"><i></i> READY WHEN YOU ARE</div><h2>Let’s make WhatsApp work harder for your business.</h2><p>Tell us where conversations are getting stuck. We’ll help you find the right system to move them forward.</p><a class="wa-button" href="contact.html">Start a conversation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></section>
+  </main>
+  <footer class="wa-footer"><div class="wrap"><a href="index.html" class="brand" aria-label="Waky home"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 14 L14.5 34 L24 17 L33.5 34 L42 14" fill="none" stroke="#1F3A2E" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="17" r="3.4" fill="#E7C873"/></svg><span>waky</span></a><p>Systems that help good businesses work better.</p><a class="back-link" href="services.html">← All solutions</a></div></footer>
+</body>
+</html>

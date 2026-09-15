@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Business System Design — Waky</title>
+
+  <meta
+    name="description"
+    content="Waky designs the systems behind your business before software implementation — mapping processes, workflows, tools and data into one connected system."
+  >
+
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Waky global styles -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- Business System Design page styles -->
+<link rel="stylesheet" href="business-system-design.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site">
+
+  <div class="wrap nav">
+
+    <!-- Waky logo -->
+
+    <a href="index.html" class="brand">
+
+      <svg viewBox="0 0 48 48">
+
+        <path
+          d="M6 14 L14.5 34 L24 17 L33.5 34 L42 14"
+          fill="none"
+          stroke="#1F3A2E"
+          stroke-width="5.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <circle
+          cx="24"
+          cy="17"
+          r="3.4"
+          fill="#E7C873"
+        />
+
+      </svg>
+
+      <span>waky</span>
+
+    </a>
+
+
+    <!-- Navigation -->
+
+    <nav class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="services.html">
+        Solutions
+      </a>
+
+      <a href="case-studies.html">
+        Case Studies
+      </a>
+
+      <a href="contact.html">
+        Let's talk
+      </a>
+
+    </nav>
+
+
+    <!-- Header CTA -->
+
+    <div class="nav-cta">
+
+      <a
+        class="btn btn-primary btn-sm"
+        href="contact.html"
+      >
+        Meet Waky
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================================
+     SERVICE HERO
+     ========================================================= -->
+
+<section class="system-hero">
+
+  <div class="wrap system-hero-grid">
+
+
+    <!-- LEFT -->
+
+    <div class="system-hero-content">
+
+      <p class="system-eyebrow">
+        BUSINESS SYSTEM DESIGN
+      </p>
+
+
+      <h1>
+        Design the system
+        <br>
+        before you buy
+        <br>
+        the software.
+      </h1>
+
+
+      <p class="system-hero-text">
+
+        We map how your business actually works —
+        people, processes, tools and data — then
+        design the system around it.
+
+      </p>
+
+
+      <a
+        href="contact.html"
+        class="system-hero-action"
+      >
+        Let's map it
+        <span>→</span>
+      </a>
+
+    </div>
+
+
+
+    <!-- RIGHT — SYSTEM ILLUSTRATION -->
+
+    <div class="system-hero-art">
+
+      <svg
+        viewBox="0 0 560 480"
+        aria-hidden="true"
+      >
+
+        <!-- Soft pastel fields -->
+
+        <circle
+          cx="370"
+          cy="130"
+          r="90"
+          class="system-art-green"
+        />
+
+        <circle
+          cx="245"
+          cy="250"
+          r="85"
+          class="system-art-lavender"
+        />
+
+        <circle
+          cx="395"
+          cy="320"
+          r="95"
+          class="system-art-gold"
+        />
+
+
+        <!-- Connection lines -->
+
+        <path
+          d="M155 240 C220 240 235 145 330 145"
+          class="system-art-line"
+        />
+
+        <path
+          d="M155 240 C245 240 285 300 370 300"
+          class="system-art-line"
+        />
+
+        <path
+          d="M330 145 C360 190 370 230 370 300"
+          class="system-art-line"
+        />
+
+
+        <!-- People -->
+
+        <rect
+          x="290"
+          y="100"
+          width="130"
+          height="58"
+          rx="16"
+          class="system-art-box"
+        />
+
+        <text
+          x="355"
+          y="136"
+          text-anchor="middle"
+          class="system-art-text"
+        >
+          People
+        </text>
+
+
+        <!-- Process -->
+
+        <rect
+          x="90"
+          y="210"
+          width="130"
+          height="58"
+          rx="16"
+          class="system-art-box"
+        />
+
+        <text
+          x="155"
+          y="246"
+          text-anchor="middle"
+          class="system-art-text"
+        >
+          Process
+        </text>
+
+
+        <!-- Tools -->
+
+        <rect
+          x="305"
+          y="270"
+          width="130"
+          height="58"
+          rx="16"
+          class="system-art-box"
+        />
+
+        <text
+          x="370"
+          y="306"
+          text-anchor="middle"
+          class="system-art-text"
+        >
+          Tools
+        </text>
+
+
+        <!-- Outcome -->
+
+        <rect
+          x="175"
+          y="365"
+          width="190"
+          height="65"
+          rx="18"
+          class="system-art-box"
+        />
+
+        <text
+          x="270"
+          y="394"
+          text-anchor="middle"
+          class="system-art-text"
+        >
+          A better system
+        </text>
+
+        <text
+          x="270"
+          y="414"
+          text-anchor="middle"
+          class="system-art-small"
+        >
+          connected operations
+        </text>
+
+      </svg>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     THE PROBLEM
+     ========================================================= -->
+
+<section class="system-problem">
+
+  <div class="wrap">
+
+    <p class="system-eyebrow">
+      THE PROBLEM
+    </p>
+
+    <h2>
+      Your business shouldn't
+      depend on people
+      remembering everything.
+    </h2>
+
+
+    <div class="system-problem-grid">
+
+      <p>
+        Leads live in one place.
+        Customer conversations live somewhere else.
+        Payments are tracked separately.
+        Teams keep their own spreadsheets.
+      </p>
+
+      <p>
+        As the business grows,
+        these gaps become expensive.
+        More tools don't necessarily create
+        a better system.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     THE SYSTEM
+     ========================================================= -->
+
+<section class="system-map">
+
+  <div class="wrap">
+
+    <div class="system-section-heading">
+
+      <p class="system-eyebrow">
+        THE SYSTEM
+      </p>
+
+      <h2>
+        Different pieces.
+        <br>
+        One connected flow.
+      </h2>
+
+    </div>
+
+
+    <div class="system-flow">
+
+      <div class="system-flow-item">
+        People
+      </div>
+
+      <span>→</span>
+
+      <div class="system-flow-item">
+        Process
+      </div>
+
+      <span>→</span>
+
+      <div class="system-flow-item">
+        Tools
+      </div>
+
+      <span>→</span>
+
+      <div class="system-flow-item">
+        Data
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WHAT WE DESIGN
+     ========================================================= -->
+
+<section class="system-design">
+
+  <div class="wrap">
+
+    <div class="system-section-heading">
+
+      <p class="system-eyebrow">
+        WHAT WE DESIGN
+      </p>
+
+      <h2>
+        We make the moving
+        parts make sense.
+      </h2>
+
+    </div>
+
+
+    <div class="system-design-grid">
+
+
+      <article class="system-design-item">
+
+        <span class="system-item-number">
+          01
+        </span>
+
+        <h3>
+          Process Mapping
+        </h3>
+
+        <p>
+          Understand how work actually moves
+          through your business.
+        </p>
+
+      </article>
+
+
+
+      <article class="system-design-item">
+
+        <span class="system-item-number">
+          02
+        </span>
+
+        <h3>
+          Workflow Design
+        </h3>
+
+        <p>
+          Turn repetitive processes into
+          clear, structured workflows.
+        </p>
+
+      </article>
+
+
+
+      <article class="system-design-item">
+
+        <span class="system-item-number">
+          03
+        </span>
+
+        <h3>
+          System Architecture
+        </h3>
+
+        <p>
+          Decide which systems should connect,
+          where data should live and how information flows.
+        </p>
+
+      </article>
+
+
+
+      <article class="system-design-item">
+
+        <span class="system-item-number">
+          04
+        </span>
+
+        <h3>
+          Automation Opportunities
+        </h3>
+
+        <p>
+          Identify the work that should stop
+          being manual.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EXAMPLE SYSTEM
+     ========================================================= -->
+
+<section class="system-example">
+
+  <div class="wrap">
+
+    <div class="system-example-heading">
+
+      <p class="system-eyebrow">
+        HOW IT COMES TOGETHER
+      </p>
+
+      <h2>
+        A business system
+        designed around the way
+        you actually work.
+      </h2>
+
+    </div>
+
+
+    <div class="system-example-map">
+
+      <div class="system-example-node">
+        Customer
+      </div>
+
+      <div class="system-example-arrow">
+        →
+      </div>
+
+      <div class="system-example-node">
+        CRM
+      </div>
+
+      <div class="system-example-arrow">
+        →
+      </div>
+
+      <div class="system-example-node">
+        WhatsApp
+      </div>
+
+      <div class="system-example-arrow">
+        →
+      </div>
+
+      <div class="system-example-node">
+        Team
+      </div>
+
+    </div>
+
+
+    <div class="system-example-bottom">
+
+      <span>
+        Payments
+      </span>
+
+      <span>
+        Reports
+      </span>
+
+      <span>
+        Follow-ups
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OUTCOME
+     ========================================================= -->
+
+<section class="system-outcome">
+
+  <div class="wrap">
+
+    <p class="system-eyebrow">
+      THE OUTCOME
+    </p>
+
+    <h2>
+      A clear blueprint
+      before implementation.
+    </h2>
+
+    <p>
+      So you know what needs to happen,
+      where it should happen and
+      which tools should make it happen.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site">
+
+  <div class="wrap footer-grid">
+
+
+    <div class="brand">
+
+      <svg viewBox="0 0 48 48">
+
+        <path
+          d="M6 14 L14.5 34 L24 17 L33.5 34 L42 14"
+          fill="none"
+          stroke="#1F3A2E"
+          stroke-width="5.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <circle
+          cx="24"
+          cy="17"
+          r="3.4"
+          fill="#E7C873"
+        />
+
+      </svg>
+
+    </div>
+
+
+    <div class="footer-links">
+
+
+      <div class="footer-col">
+
+        <h4>Site</h4>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="services.html">
+          Solutions
+        </a>
+
+        <a href="case-studies.html">
+          Case Studies
+        </a>
+
+        <a href="contact.html">
+          Let's talk
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
+
+
+      <div class="footer-col">
+
+        <h4>Talk to us</h4>
+
+        <a
+          data-wa-button
+          data-wa-message="Hi Waky, I'd like to book a free consultation."
+        >
+          WhatsApp
+        </a>
+
+        <a href="mailto:hello@thewaky.com">
+          hello@thewaky.com
+        </a>
+
+        <a href="tel:+919105999888">
+          +91 9105 999888
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="wrap footer-bottom">
+
+    <span>
+      © 2026 Waky. Built for teams who'd rather be selling.
+    </span>
+
+
+    <div class="footer-socials">
+
+      <a
+        href="https://www.linkedin.com/company/waky-labs"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Waky on LinkedIn"
+      >
+        LinkedIn
+      </a>
+
+      <a
+        href="https://www.instagram.com/wakylabs"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Waky on Instagram"
+      >
+        Instagram
+      </a>
+
+    </div>
+
+
+    <span>
+      Kerala, India
+    </span>
+
+  </div>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
