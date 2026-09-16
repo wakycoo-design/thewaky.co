@@ -62,6 +62,7 @@
   border-radius:50%;
 
   background:var(--gold);
+  box-shadow:0 0 0 4px var(--gold-soft);
 }
 
 

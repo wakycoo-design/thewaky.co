@@ -665,6 +665,7 @@
     vertical-align:1px;
     border-radius:50%;
     background:var(--gold);
+    box-shadow:0 0 0 4px var(--gold-soft);
   }
 
   .trusted-title{
@@ -736,6 +737,10 @@
     border-top: 1px solid var(--line);
     padding: 48px 0 36px;
   }
+  footer.site .brand svg{
+    width:58px;
+    height:58px;
+  }
   .footer-grid{
     display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap: 30px;
   }
@@ -806,7 +811,8 @@
     margin-bottom: 18px; position: relative; z-index: 1;
   }
   .fw-step h3{ font-size: 17.5px; margin-bottom: 8px; }
-  .fw-step p{ font-size: 14px; margin-bottom: 0; }
+  .fw-step p{ font-size: 13px; margin-bottom: 0; }
+  .framework-section .section-head > p{ font-size: 13px; }
 
   /* ---------- Contact page ---------- */
   .contact-grid{
@@ -1194,6 +1200,7 @@
 
     border-radius: 50%;
     background: #dcc77a;
+    box-shadow: 0 0 0 4px #eee5be;
   }
 
   #waky-services .waky-services-intro h2 {
@@ -2063,6 +2070,7 @@
     border-radius:50%;
 
     background:var(--gold);
+    box-shadow:0 0 0 4px var(--gold-soft);
   }
 
   .stack-heading h2{
@@ -2116,6 +2124,13 @@
     flex-direction:column;
 
     box-sizing:border-box;
+  }
+
+  .stack-card-link{
+    position:absolute;
+    inset:0;
+    z-index:2;
+    border-radius:inherit;
   }
 
 
@@ -2202,30 +2217,39 @@
 
 
   /* =========================================================
-    LITTLE HAND-DRAWN ARROW
+    MINIMAL CARD ARROW
     ========================================================= */
 
   .stack-doodle{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
+    position:relative;
+    flex:0 0 40px;
     width:40px;
     height:40px;
+    border-radius:50%;
+  }
 
-    border-radius:14px;
+  .stack-doodle::before{
+    content:"";
+    position:absolute;
+    top:20px;
+    left:10px;
+    width:18px;
+    height:1.5px;
+    border-radius:999px;
+    background:currentColor;
+    transform:rotate(-45deg);
+    transform-origin:right center;
+  }
 
-    font-family:
-      "Comic Sans MS",
-      "Bradley Hand",
-      cursive;
-
-    font-size:25px;
-    line-height:1;
-
-    transform:rotate(-8deg);
+  .stack-doodle::after{
+    content:"";
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:9px;
+    height:9px;
+    border-top:1.5px solid currentColor;
+    border-right:1.5px solid currentColor;
   }
 
   .stack-card-green .stack-doodle{
@@ -2370,6 +2394,23 @@
   transition:
     opacity .25s ease,
     transform .25s ease;
+}
+
+.stack-logo img[src*="erpnext-logo"]{
+  height:50px;
+}
+
+.stack-logo img[src*="tallyprime"]{
+  height:36px;
+}
+
+.stack-logo-cloudflare{
+  color:#4a4a4a;
+  font-family:var(--display);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:-.04em;
+  white-space:nowrap;
 }
 
 
@@ -2550,6 +2591,13 @@
     border-color:var(--forest);
   }
 
+  header.site .btn-sm{
+    padding:10px 16px;
+    border-radius:10px;
+    font-size:13px;
+    letter-spacing:.02em;
+  }
+
   header.site .btn-primary:hover{
     background:var(--forest);
     color:var(--cream);
@@ -2683,6 +2731,7 @@
   margin-right:10px;
   border-radius:50%;
   background:var(--gold);
+  box-shadow:0 0 0 4px var(--gold-soft);
 }
 
 .services-hero h1{
