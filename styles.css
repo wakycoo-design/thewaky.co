@@ -701,9 +701,6 @@
     padding:0 25px;
   }
 
-
-  }
-
   .client-logo img{
     display:block;
     width:auto;
@@ -711,8 +708,7 @@
     max-width:213px;
     max-height:95px;
     object-fit:contain;
-
-    opacity:.55;
+    opacity:1;
     transform:scale(1.45);
 
     transition:
@@ -723,6 +719,15 @@
   .client-logo:hover img{
     opacity:1;
     transform:scale(1.52);
+  }
+
+  .client-logo img[src*="cafelogo"]{
+    height:64px;
+    transform:scale(1.1);
+  }
+
+  .client-logo:hover img[src*="cafelogo"]{
+    transform:scale(1.16);
   }
 
 
