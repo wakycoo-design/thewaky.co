@@ -852,6 +852,8 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 900px){
     .hero-grid, .showcase-grid, .contact-grid{ grid-template-columns: 1fr; }
+    .hero-grid>:first-child{ transform:none; }
+    .hero-art img{ width:100%; transform:none; }
     .cards-3, .steps-3, .steps-4, .framework-row{ grid-template-columns: 1fr; }
     .fw-step{ padding: 8px 0 24px 0; }
     .fw-step::before{ display:none; }
