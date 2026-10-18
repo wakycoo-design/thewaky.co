@@ -94,7 +94,9 @@ if (form) {
 
   });
 }
-document.getElementById("testOtpBtn").addEventListener("click", async function () {
+const otpBtn = document.getElementById("testOtpBtn");
+
+if (otpBtn) otpBtn.addEventListener("click", async function () {
 
     console.log("🚀 BUTTON CLICKED");
 
@@ -156,3 +158,61 @@ if (bookButton) {
 
   });
 }
+
+
+
+// ---- Design layer: mobile menu, header state, scroll reveal ----
+
+document.documentElement.classList.add("js");
+
+(function () {
+  const header = document.querySelector("header.site");
+  const nav = document.querySelector("header.site .nav");
+  const links = document.querySelector(".nav-links");
+
+  if (header && nav && links) {
+    const toggle = document.createElement("button");
+    toggle.className = "nav-toggle";
+    toggle.type = "button";
+    toggle.setAttribute("aria-label", "Open menu");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.innerHTML = "<span></span>";
+    nav.appendChild(toggle);
+
+    const setOpen = open => {
+      document.body.classList.toggle("nav-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      document.documentElement.style.setProperty("--hdr", header.offsetHeight + "px");
+    };
+
+    toggle.addEventListener("click", () => setOpen(!document.body.classList.contains("nav-open")));
+    links.addEventListener("click", e => { if (e.target.closest("a")) setOpen(false); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") setOpen(false); });
+    window.addEventListener("resize", () => { if (innerWidth > 860) setOpen(false); });
+
+    const onScroll = () => header.classList.toggle("scrolled", scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  const targets = document.querySelectorAll(
+    ".hero-grid > *, .section-head, .card, .waky-service-card, .fw-step, .stack-card, .stack-heading, .trusted-title, .cta-card"
+  );
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+    targets.forEach(el => {
+      el.style.setProperty("--d", Math.min([...el.parentElement.children].indexOf(el), 4) * 0.08 + "s");
+      el.classList.add("reveal");
+      io.observe(el);
+    });
+  } else {
+    targets.forEach(el => el.classList.add("in"));
+  }
+})();
