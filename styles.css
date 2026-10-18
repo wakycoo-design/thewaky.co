@@ -1674,7 +1674,7 @@
     overflow: hidden;
 
     /* Keep your existing CTA illustration */
-    background-image: url("assets/CTA_illustration.png");
+    background-image: url("assets/CTA_illustration.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3474,3 +3474,98 @@ section{padding-top:var(--section-y);padding-bottom:var(--section-y)}
   .contact-form-card{margin-left:0;max-width:none}
 }
 @media (max-width:640px){.contact-form-card{padding:24px 20px;border-radius:20px}}
+
+/* =========================================================
+   DESIGN LAYER v3 — calm, editorial refinement
+   ========================================================= */
+
+:where(img[height]){height:auto}
+
+/* ---------- Calm foundations: warm paper, quiet type, wide margins ---------- */
+:root{
+  --section-y:clamp(80px,11vw,152px);
+  --paper:#FBFAF5;
+  --hairline:rgba(23,59,46,.12);
+}
+body{background:var(--paper);font-size:clamp(16px,1.1vw,18px);line-height:1.65}
+header.site{background:rgba(251,250,245,.86);border-bottom:1px solid var(--hairline)}
+
+h1,h2,h3{font-weight:500}
+h1,h2{letter-spacing:-.03em}
+.hero h1{font-weight:500;line-height:1.04;letter-spacing:-.04em}
+.section-head h2,#waky-services .waky-services-intro h2,.stack-heading h2,.trusted-title,.framework-section h2{
+  font-weight:500;letter-spacing:-.035em;line-height:1.06;
+}
+.brand span{font-weight:600}
+p{color:#52665d}
+.hero .lede,.section-head p{line-height:1.65;color:#52665d}
+
+/* eyebrows: whisper, don't shout */
+.eyebrow,#waky-services .waky-services-eyebrow,.stack-eyebrow,.trusted-label{
+  font-size:12px;letter-spacing:.16em;color:#6f8379;
+}
+.eyebrow::before{box-shadow:none;width:6px;height:6px;flex-basis:6px}
+#waky-services .waky-services-eyebrow span{box-shadow:none;width:6px;height:6px;flex-basis:6px}
+
+/* section heads: left, narrow measure, room to breathe */
+.section-head{max-width:720px;margin:0 0 clamp(36px,5vw,72px);text-align:left}
+.section-head h2{margin-bottom:.45em}
+.section-head p{max-width:56ch}
+
+/* buttons: quiet pill */
+.btn{border-radius:999px;font-weight:500;letter-spacing:0}
+.btn-primary{box-shadow:none}
+.btn-primary:hover{box-shadow:none;background:#0f2c21}
+.btn:not(.btn-primary){background:transparent;border:1px solid var(--hairline)}
+.btn:not(.btn-primary):hover{border-color:var(--forest)}
+
+/* cards: flat, hairline, almost no shadow */
+.card{background:#fff;border:1px solid var(--hairline);box-shadow:none;border-radius:22px}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(23,59,46,.35);border-color:rgba(23,59,46,.22)}
+.card h3{font-weight:600;letter-spacing:-.01em}
+.card h4{font-weight:400;color:#6f8379}
+
+/* services: calmer pastel tiles, shorter, less ornament */
+#waky-services{background:#F4F1E8}
+#waky-services .waky-service-card{height:clamp(400px,34vw,460px);border-radius:24px}
+#waky-services .waky-service-card:hover{transform:translateY(-3px);box-shadow:0 24px 48px -32px rgba(23,59,46,.4)}
+#waky-services .waky-service-content h3{font-weight:500;letter-spacing:-.035em}
+#waky-services .waky-service-art{opacity:.55}
+#waky-services .waky-service-link{top:auto;bottom:0;left:0;border-bottom-color:rgba(23,59,46,.5)}
+#waky-services .waky-service-content{height:calc(100% - 62px)}
+#waky-services .waky-service-content{display:flex;flex-direction:column;position:relative}
+#waky-services .waky-service-link{position:absolute}
+
+/* framework: hairlines instead of boxes */
+.framework-row{border-top:1px solid var(--hairline)}
+.fw-step{padding-top:28px}
+.fw-step h3{font-weight:500;font-size:clamp(20px,1.8vw,24px)}
+
+/* stack cards: paper-light, hairline */
+.stack-card{border:1px solid var(--hairline);box-shadow:none;border-radius:24px}
+.stack-card:hover{transform:translateY(-3px);box-shadow:0 24px 48px -34px rgba(23,59,46,.4)}
+.stack-card h3{font-weight:500;letter-spacing:-.03em}
+
+/* strip + trusted: lighter touch */
+.strip{background:transparent;border-color:var(--hairline)}
+.pill{background:transparent;border-color:var(--hairline);color:#52665d}
+
+/* CTA + footer */
+.cta-card{border:1px solid var(--hairline);border-radius:32px}
+.cta-title{font-weight:500;letter-spacing:-.04em}
+footer.site{border-top:1px solid var(--hairline);background:transparent}
+.footer-col h4{letter-spacing:.14em;color:#8a9a92}
+.footer-bottom{border-top-color:var(--hairline)}
+
+@media (max-width:640px){
+  :root{--section-y:72px}
+  #waky-services .waky-service-card,#waky-services .waky-service-card:nth-child(3){height:auto;min-height:0}
+  #waky-services .waky-service-content{height:auto;display:block}
+  #waky-services .waky-service-link{position:static;display:inline-block}
+  .section-head{margin-bottom:32px}
+}
+@media (min-width:641px) and (max-width:1024px){
+  #waky-services .waky-service-card{height:420px}
+  #waky-services .waky-service-card:nth-child(3){height:320px}
+  #waky-services .waky-service-card:nth-child(3) .waky-service-link{top:auto}
+}
