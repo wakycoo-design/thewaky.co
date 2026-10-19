@@ -189,7 +189,7 @@ document.documentElement.classList.add("js");
     toggle.addEventListener("click", () => setOpen(!document.body.classList.contains("nav-open")));
     links.addEventListener("click", e => { if (e.target.closest("a")) setOpen(false); });
     document.addEventListener("keydown", e => { if (e.key === "Escape") setOpen(false); });
-    window.addEventListener("resize", () => { if (innerWidth > 860) setOpen(false); });
+    window.addEventListener("resize", () => { if (innerWidth > 900) setOpen(false); });
 
     const onScroll = () => header.classList.toggle("scrolled", scrollY > 8);
     onScroll();
@@ -197,7 +197,7 @@ document.documentElement.classList.add("js");
   }
 
   const targets = document.querySelectorAll(
-    ".hero-grid > *, .section-head, .card, .waky-service-card, .fw-step, .stack-card, .stack-heading, .trusted-title, .cta-card"
+    ".head, .steps li, .pillar, .stack-item, .work-feature, .work-card, .person, .service, .grid-3 > *, .process article, .statements div, .flow-map, .arch, .caps div, .study-row, .result, .cta-band"
   );
 
   if ("IntersectionObserver" in window) {
