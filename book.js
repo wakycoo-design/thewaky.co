@@ -4,7 +4,7 @@
 const BOOKING_API = "https://waky-booking-50046919821.development.catalystappsail.in/api/public/v1";
 
 // The "Consultation" service in Waky Booking (Services > its id). Booking stays offline until it is set.
-const CONSULTATION_SERVICE_ID = "";
+const CONSULTATION_SERVICE_ID = "5147c5c0-87bd-4143-a9f2-f7f3797705c6";
 
 // Matched against staff names from the API, so the cards keep working if an id changes.
 const PEOPLE = {
