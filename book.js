@@ -6,6 +6,9 @@ const BOOKING_API = "https://waky-booking-50046919821.development.catalystappsai
 // The "Consultation" service in Waky Booking (Services > its id). Booking stays offline until it is set.
 const CONSULTATION_SERVICE_ID = "5147c5c0-87bd-4143-a9f2-f7f3797705c6";
 
+// Shown start times are at least this far apart, whatever interval the app offers (set it to 30 there too).
+const SLOT_STEP_MIN = 30;
+
 // Matched against staff names from the API, so the cards keep working if an id changes.
 const PEOPLE = {
   ameen:   { name: "Ameen Sha PK",     match: /ameen/i },
@@ -42,6 +45,14 @@ if (root) {
     new Intl.DateTimeFormat("en-IN", { timeZone: state.timezone, hour: "numeric", minute: "2-digit", hour12: true }).format(new Date(iso)).toUpperCase();
   const dayLabel = (key) =>
     new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "long", weekday: "long", timeZone: "UTC" }).format(new Date(key + "T00:00:00Z"));
+  // Minutes after local midnight, in the firm's time zone.
+  const localMinutes = (iso) => {
+    const [h, m] = new Intl.DateTimeFormat("en-GB", { timeZone: state.timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
+      .format(new Date(iso))
+      .split(":")
+      .map(Number);
+    return h * 60 + m;
+  };
   const longLabel = (iso) =>
     new Intl.DateTimeFormat("en-IN", { timeZone: state.timezone, weekday: "long", day: "numeric", month: "long", hour: "numeric", minute: "2-digit", hour12: true }).format(new Date(iso));
 
@@ -94,8 +105,13 @@ if (root) {
       });
       const data = await api(`/availability?${q}`);
       state.timezone = data.timezone || state.timezone;
+      // Slots arrive sorted; keep each one that starts a full step after the last one kept that day.
+      const lastKept = new Map();
       for (const s of data.slots) {
         const k = dayKey(s.start);
+        const t = Date.parse(s.start);
+        if (lastKept.has(k) && t - lastKept.get(k) < SLOT_STEP_MIN * 60_000) continue;
+        lastKept.set(k, t);
         if (!state.slotsByDay.has(k)) state.slotsByDay.set(k, []);
         state.slotsByDay.get(k).push(s);
       }
@@ -157,8 +173,20 @@ if (root) {
     const slots = state.slotsByDay.get(key) || [];
     $("[data-day-label]").textContent = dayLabel(key);
     $("[data-day-count]").textContent = `${slots.length} ${slots.length === 1 ? "time" : "times"} available`;
-    list.innerHTML = slots
-      .map((s, i) => `<button type="button" class="book-slot" data-slot="${i}">${timeLabel(s.start)}</button>`)
+    const parts = [
+      ["Morning", 0, 12 * 60],
+      ["Afternoon", 12 * 60, 17 * 60],
+      ["Evening", 17 * 60, 24 * 60],
+    ];
+    list.innerHTML = parts
+      .map(([label, from, to]) => {
+        const buttons = slots
+          .map((s, i) => [s, i])
+          .filter(([s]) => localMinutes(s.start) >= from && localMinutes(s.start) < to)
+          .map(([s, i]) => `<button type="button" class="book-slot" data-slot="${i}">${timeLabel(s.start)}</button>`)
+          .join("");
+        return buttons ? `<div class="book-slot-group"><h3>${label}</h3><div class="book-slot-grid">${buttons}</div></div>` : "";
+      })
       .join("");
   }
 
@@ -234,11 +262,11 @@ if (root) {
     if (choice.startsWith("pkg:")) {
       // Packages are paid before they are recorded, and online payment isn't live yet: hand over to WhatsApp.
       const p = state.packages.find((x) => `pkg:${x.id}` === choice);
-      const msg = `Hi Waky, I'd like the ${p.credits}-session package (${rupees(p.pricePaise)}) with ${state.staff.name}, starting ${longLabel(state.slot.start)}.`;
+      const msg = `Hi Waky, I'd like the ${p.credits}-session package (${rupees(p.pricePaise)}) with ${person.name}, starting ${longLabel(state.slot.start)}.`;
       window.open(typeof waLink === "function" ? waLink(msg) : `https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
       return;
     }
-    $("[data-summary]").textContent = `${state.staff.name} · ${longLabel(state.slot.start)} · ${state.staff.pricePaise ? rupees(state.staff.pricePaise) : ""}`;
+    $("[data-summary]").textContent = `${person.name} · ${longLabel(state.slot.start)} · ${state.staff.pricePaise ? rupees(state.staff.pricePaise) : ""}`;
     show("details");
   }
 
@@ -275,7 +303,7 @@ if (root) {
           notes: f.get("notes").trim() || undefined,
         }),
       });
-      $("[data-done-text]").textContent = `${state.staff.name} will see you on ${longLabel(data.booking.start)}. We'll send the details on WhatsApp.`;
+      $("[data-done-text]").textContent = `${person.name} will see you on ${longLabel(data.booking.start)}. We'll send the details on WhatsApp.`;
       $("[data-done-ref]").textContent = `Reference ${data.booking.reference}`;
       $("[data-manage]").href = data.manageUrl;
       show("done");

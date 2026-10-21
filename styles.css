@@ -3661,7 +3661,9 @@ footer.site{border-top:1px solid var(--hairline);background:transparent}
 
 .book-slots h2{margin:8px 0 6px;font-family:var(--body);font-size:20px;font-weight:500}
 .book-slots .book-muted{margin-bottom:18px;font-size:14.5px}
-.book-slot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-height:520px;overflow:auto;padding:2px}
+.book-slot-list{display:grid;gap:22px;max-height:560px;overflow:auto;padding:2px 6px 2px 2px}
+.book-slot-group h3{margin:0 0 10px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#6f8379}
+.book-slot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .book-slot{
   padding:18px 12px;border:1px solid var(--hairline);border-radius:14px;background:#fff;
   font-size:16px;font-weight:500;color:var(--forest);cursor:pointer;transition:border-color .2s ease,background .2s ease;
@@ -3709,7 +3711,7 @@ footer.site{border-top:1px solid var(--hairline);background:transparent}
 @media (max-width:860px){
   .book-time{grid-template-columns:1fr}
   .book-cal{padding-right:0;padding-bottom:24px;border-right:0;border-bottom:1px solid var(--hairline)}
-  .book-slot-grid{max-height:none}
+  .book-slot-list{max-height:none}
 }
 @media (max-width:640px){
   .book-toggle{display:grid;width:100%}
