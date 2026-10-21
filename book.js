@@ -45,10 +45,12 @@ if (root) {
   const longLabel = (iso) =>
     new Intl.DateTimeFormat("en-IN", { timeZone: state.timezone, weekday: "long", day: "numeric", month: "long", hour: "numeric", minute: "2-digit", hour12: true }).format(new Date(iso));
 
+  // Only "simple" requests (no custom headers, text/plain body): Catalyst's gateway answers the CORS
+  // preflight itself without CORS headers, so any request that needs one is blocked by the browser.
   async function api(path, opts = {}) {
     const res = await fetch(BOOKING_API + path, {
       ...opts,
-      headers: { "Content-Type": "application/json", ...(opts.headers || {}) },
+      ...(opts.body ? { headers: { "Content-Type": "text/plain;charset=UTF-8" } } : {}),
     });
     const body = await res.json().catch(() => ({}));
     if (!res.ok) {
@@ -259,8 +261,8 @@ if (root) {
     try {
       const data = await api("/bookings", {
         method: "POST",
-        headers: { "Idempotency-Key": state.idemKey },
         body: JSON.stringify({
+          idempotencyKey: state.idemKey,
           serviceId: CONSULTATION_SERVICE_ID,
           staffId: state.staff.id,
           start: state.slot.start,
