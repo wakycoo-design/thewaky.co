@@ -3449,7 +3449,7 @@ section{padding-top:var(--section-y);padding-bottom:var(--section-y)}
 
 .footer-col a{display:block;width:fit-content}
 @media (max-width:640px){
-  .cta-card{background-color:#F3F1E6;background-size:210% auto;background-position:2% 0;background-repeat:no-repeat}
+  .cta-card{background-color:#F3F1E6;background-size:190% auto;background-position:0 0;background-repeat:no-repeat}
   .cta-content{padding:min(62vw,300px) 24px 32px}
   #waky-services .waky-service-art{opacity:.2}
   .footer-links{display:grid;grid-template-columns:1fr 1fr;gap:28px 20px;width:100%}
