@@ -33,10 +33,20 @@ document.querySelectorAll(".nav-links a").forEach(a => {
 
 const form = document.getElementById("contact-form");
 
+function showFormError(message) {
+  const el = document.getElementById("form-error");
+  if (!el) return;
+  el.textContent = message || "Something went wrong. Please try again.";
+  el.hidden = false;
+}
+
 if (form) {
   form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
+
+    const formError = document.getElementById("form-error");
+    if (formError) formError.hidden = true;
 
     const data = new FormData(form);
 
@@ -81,14 +91,14 @@ if (form) {
 
       } else {
 
-        alert(result.message);
+        showFormError(result.message);
 
       }
 
     } catch (error) {
 
       console.error("Contact Form Error:", error);
-      alert("Network error. Please try again.");
+      showFormError("Network error. Please try again.");
 
     }
 

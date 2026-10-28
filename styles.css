@@ -3718,3 +3718,7 @@ footer.site{border-top:1px solid var(--hairline);background:transparent}
   .book-toggle button{min-width:0}
   .book-slot{padding:15px 10px}
 }
+
+/* contact form: inline error line (replaces the browser alert) */
+.form-error{margin:14px 0 0;font-size:15px;line-height:1.5;color:#a8432b}
+.form-error[hidden]{display:none}
