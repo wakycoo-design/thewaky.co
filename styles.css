@@ -3449,7 +3449,7 @@ section{padding-top:var(--section-y);padding-bottom:var(--section-y)}
 
 .footer-col a{display:block;width:fit-content}
 @media (max-width:640px){
-  .cta-card{background-color:#F3F1E6;background-size:190% auto;background-position:0 0;background-repeat:no-repeat}
+  .cta-card{background-color:#F3F1E6;background-size:210% auto;background-position:2% 0;background-repeat:no-repeat}
   .cta-content{padding:min(62vw,300px) 24px 32px}
   #waky-services .waky-service-art{opacity:.2}
   .footer-links{display:grid;grid-template-columns:1fr 1fr;gap:28px 20px;width:100%}
@@ -3722,3 +3722,11 @@ footer.site{border-top:1px solid var(--hairline);background:transparent}
 /* contact form: inline error line (replaces the browser alert) */
 .form-error{margin:14px 0 0;font-size:15px;line-height:1.5;color:#a8432b}
 .form-error[hidden]{display:none}
+
+/* Phones and tablets keep the original CTA illustration and crop */
+@media (max-width:900px){
+  .cta-card{background-image:url("assets/CTA_illustration_mobile.webp")}
+}
+@media (max-width:900px) and (min-width:641px){
+  .cta-card{background-size:cover;background-position:28% center}
+}
