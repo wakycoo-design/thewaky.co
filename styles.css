@@ -3722,3 +3722,24 @@ footer.site{border-top:1px solid var(--hairline);background:transparent}
 /* contact form: inline error line (replaces the browser alert) */
 .form-error{margin:14px 0 0;font-size:15px;line-height:1.5;color:#a8432b}
 .form-error[hidden]{display:none}
+
+/* CTA on phones and tablets: illustration on top, text below, one solid ground (no seam) */
+@media (max-width:900px){
+  .cta-section .cta-card{
+    min-height:0;display:flex;flex-direction:column;
+    background:#fcfcf7;background-image:none;
+  }
+  .cta-section .cta-card::before{
+    content:"";display:block;width:100%;aspect-ratio:1.742;
+    background:url("assets/CTA_illustration.webp") 0 0/140% auto no-repeat;
+  }
+  .cta-section .cta-content{
+    position:relative;width:100%;height:auto;min-height:0;
+    padding:0 28px 36px;background:none;
+  }
+  .cta-section .cta-bottom{margin-top:28px}
+}
+@media (max-width:640px){
+  .cta-section .cta-card::before{aspect-ratio:1.284;background-size:190% auto}
+  .cta-section .cta-content{padding:0 24px 32px}
+}
